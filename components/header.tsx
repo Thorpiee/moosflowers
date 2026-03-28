@@ -47,7 +47,7 @@ export function Header() {
                 alt="Moo's Flowers"
                 width={400}
                 height={80}
-                className="h-11 w-auto md:h-14 lg:h-16"
+                className="h-14 w-auto md:h-[4.5rem] lg:h-[5.1rem]"
                 style={{ filter: "brightness(0) invert(1) sepia(15%) saturate(250%) hue-rotate(340deg) brightness(92%) contrast(90%)" }}
                 priority
               />

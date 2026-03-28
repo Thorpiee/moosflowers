@@ -11,26 +11,26 @@ type WorkItem = {
 
 const workItems: WorkItem[] = [
     {
-        title: "Spring Bridal Bouquet",
-        label: "Weddings",
+        title: "Christmas Wreath",
+        label: "Seasonal",
         image: "/flowers1.jpg",
         alt: "Spring bridal bouquet with seasonal florals",
     },
     {
-        title: "Romantic Table Centrepiece",
-        label: "Events",
+        title: "Living Wreath",
+        label: "Seasonal",
         image: "/flowers2.jpg",
         alt: "Romantic floral centrepiece arrangement",
     },
     {
-        title: "Pastel Celebration Arrangement",
-        label: "Celebrations",
+        title: "Structured Hand-tied",
+        label: "everyday",
         image: "/flowers3.jpg",
         alt: "Pastel celebration floral arrangement",
     },
     {
-        title: "Elegant White Roses",
-        label: "Gifts",
+        title: "Natural Living Wreath",
+        label: "Seasonal",
         image: "/flowers4.jpg",
         alt: "Elegant white roses bouquet",
     },
@@ -47,7 +47,7 @@ export function MyWorkSection() {
                         </h2>
                         <div className="mt-4 h-px w-28 bg-primary/30" />
                         <p className="mt-6 text-base md:text-lg xl:text-xl text-primary/80 leading-relaxed">
-                            Explore a selection of bespoke floral arrangements created for weddings, events, gifts, and special occasions.
+                            Explore a portfolio of thoughtfully designed floral arrangements, crafted for every occasion
                         </p>
                     </div>
                 </div>
@@ -61,9 +61,9 @@ export function MyWorkSection() {
                         <article
                             key={item.title}
                             role="listitem"
-                            className="group min-w-[78%] sm:min-w-[48%] md:min-w-0 bg-[#f7f5ef] border border-primary/12 shadow-[0_8px_30px_rgba(48,66,57,0.08)] p-5 md:p-6 flex flex-col snap-start transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(48,66,57,0.16)]"
+                            className="group min-w-[78%] sm:min-w-[48%] md:min-w-0 bg-card border border-border shadow-[0_8px_30px_rgba(48,66,57,0.08)] p-5 md:p-6 flex flex-col snap-start transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(48,66,57,0.14)]"
                         >
-                            <div className="relative aspect-[4/5] overflow-hidden border border-primary/12">
+                            <div className="relative aspect-[4/5] overflow-hidden border border-border">
                                 <Image
                                     src={item.image}
                                     alt={item.alt}

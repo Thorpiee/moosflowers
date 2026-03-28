@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Instagram, Facebook, Mail } from "lucide-react"
 
 export function StudioSection() {
   return (
@@ -13,17 +14,35 @@ export function StudioSection() {
 
       <div className="relative max-w-2xl mx-auto">
         <div className="bg-primary/88 text-primary-foreground p-8 md:p-12 xl:p-14 text-center">
-          <h3 className="font-serif text-3xl md:text-4xl tracking-wide mb-6">The Studio</h3>
-          <div className="space-y-2 text-base mb-6">
-            <p>123 Bloom Street</p>
-            <p>London, SW1A 1AA</p>
+          <h3 className="font-serif text-3xl md:text-4xl tracking-wide mb-2">Moo's Flowers</h3>
+          <p className="text-primary-foreground/80 text-sm tracking-wide mb-8">Based on the Suffolk–Essex border</p>
+          <div className="space-y-3">
+            <a
+              href="mailto:hello@moosflowers.com"
+              className="flex items-center justify-center gap-2 text-base hover:text-primary-foreground/80 transition-colors"
+            >
+              <Mail className="w-4 h-4 shrink-0" />
+              hello@moosflowers.com
+            </a>
+            <a
+              href="https://www.instagram.com/moosflowers/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 text-base hover:text-primary-foreground/80 transition-colors"
+            >
+              <Instagram className="w-4 h-4 shrink-0" />
+              @moosflowers
+            </a>
+            <a
+              href="https://www.facebook.com/moosflowers/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 text-base hover:text-primary-foreground/80 transition-colors"
+            >
+              <Facebook className="w-4 h-4 shrink-0" />
+              Moo's Flowers
+            </a>
           </div>
-          <div className="space-y-1 text-base mb-6">
-            <p>Monday - Friday: 9AM - 6PM</p>
-            <p>Saturday: 10AM - 5PM</p>
-            <p>Sunday: Closed</p>
-          </div>
-          <p className="text-xs tracking-wide">Visits by appointment only</p>
         </div>
       </div>
     </section>

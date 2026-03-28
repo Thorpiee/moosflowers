@@ -6,7 +6,7 @@ export function BespokeSection() {
       <div className="max-w-6xl mx-auto text-center">
         <h3 className="font-serif text-4xl md:text-5xl xl:text-6xl tracking-wider mb-8">Bespoke Arrangements</h3>
         <Link
-          href="#"
+          href="/bespoke-gallery"
           className="inline-block border border-primary-foreground px-10 py-4 text-sm tracking-wide font-medium hover:bg-primary-foreground hover:text-primary transition-colors"
         >
           View Gallery

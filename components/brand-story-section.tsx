@@ -14,7 +14,7 @@ export function BrandStorySection() {
                         className="object-cover"
                     />
                     {/* Decorative border */}
-                    <div className="absolute inset-4 border border-[#eae6df]/40 pointer-events-none" />
+                    <div className="absolute inset-4 border border-border/80 pointer-events-none" />
                 </div>
 
                 {/* Text */}

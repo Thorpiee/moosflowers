@@ -1,83 +1,184 @@
 "use client"
 
+import Image from "next/image"
+import Link from "next/link"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { useState } from "react"
+
+import { ArrowUpRight, Facebook, Instagram, Mail } from "lucide-react"
+
+const socialLinks = [
+    {
+        title: "Instagram",
+        href: "https://www.instagram.com/moosflowers/",
+        description: "Browse recent arrangements, seasonal stems, and behind-the-scenes floristry moments.",
+        icon: Instagram,
+    },
+    {
+        title: "Facebook",
+        href: "https://www.facebook.com/moosflowers/",
+        description: "Follow along for updates, new work, and floral stories from the studio.",
+        icon: Facebook,
+    },
+]
+
+const socialPreviews = [
+    {
+        label: "Latest On Instagram",
+        title: "A glimpse of recent bouquets and seasonal work",
+        image: "/images/flowers5.jpg",
+        href: "https://www.instagram.com/moosflowers/",
+    },
+    {
+        label: "Latest On Facebook",
+        title: "Studio updates, wreaths, and bespoke floral moments",
+        image: "/images/flowers7.jpg",
+        href: "https://www.facebook.com/moosflowers/",
+    },
+]
 
 export default function ContactPage() {
-    const [form, setForm] = useState({ name: "", email: "", message: "" })
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
-
-        const subject = encodeURIComponent(`Website enquiry from ${form.name}`)
-        const body = encodeURIComponent(
-            `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-        )
-
-        window.location.href = `mailto:hello@moosflowers.com?subject=${subject}&body=${body}`
-        setForm({ name: "", email: "", message: "" })
-    }
-
     return (
         <main className="min-h-screen">
             <Header />
 
-            <section className="py-16 md:py-24 px-4 md:px-8">
-                <div className="max-w-2xl mx-auto">
-                    <h1 className="font-serif text-3xl md:text-5xl tracking-wide text-center mb-4">Contact Us</h1>
-                    <p className="text-center text-muted-foreground text-sm tracking-wide mb-12">
-                        We'd love to hear from you. Get in touch for enquiries, bespoke orders, or just to say hello.
-                    </p>
-
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                        <div>
-                            <label className="block text-xs tracking-wide font-medium mb-2">Name</label>
-                            <input
-                                type="text"
-                                value={form.name}
-                                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                                className="w-full px-4 py-3 bg-card border border-border text-sm focus:outline-none focus:border-primary"
-                                placeholder="Your name"
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label className="block text-xs tracking-wide font-medium mb-2">Email</label>
-                            <input
-                                type="email"
-                                value={form.email}
-                                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                                className="w-full px-4 py-3 bg-card border border-border text-sm focus:outline-none focus:border-primary"
-                                placeholder="Your email"
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label className="block text-xs tracking-wide font-medium mb-2">Message</label>
-                            <textarea
-                                value={form.message}
-                                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                                rows={6}
-                                className="w-full px-4 py-3 bg-card border border-border text-sm focus:outline-none focus:border-primary resize-none"
-                                placeholder="Your message"
-                                required
-                            />
-                        </div>
-                        <button
-                            type="submit"
-                            className="w-full py-3 bg-primary text-primary-foreground text-xs tracking-wide font-medium hover:opacity-90 transition-opacity"
-                        >
-                            Send Message
-                        </button>
-                    </form>
-
-                    <div className="mt-12 pt-12 border-t border-border text-center space-y-2">
-                        <p className="text-xs tracking-wide font-medium">Get In Touch</p>
-                        <a href="mailto:hello@moosflowers.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors block">
-                            hello@moosflowers.com
-                        </a>
+            <section className="bg-background px-4 py-16 md:px-8 md:py-24 xl:px-10">
+                <div className="mx-auto max-w-[88rem]">
+                    <div className="max-w-3xl">
+                        <p className="text-xs uppercase tracking-[0.28em] text-primary/58">Contact</p>
+                        <h1 className="mt-4 font-serif text-4xl tracking-wide text-primary md:text-6xl">
+                            Contact Me
+                        </h1>
+                        <div className="mt-5 h-px w-24 bg-primary/25" />
+                        <p className="mt-7 max-w-[42rem] text-base leading-relaxed text-primary/78 md:text-lg">
+                            Get in touch for bespoke orders, floral enquiries, collaborations, or just to say hello.
+                        </p>
                     </div>
+
+                    <div className="mt-14 grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 xl:mt-16">
+                        <section className="rounded-[1.6rem] border border-border bg-card px-6 py-7 shadow-[0_12px_34px_rgba(39,57,48,0.08)] md:px-8 md:py-9">
+                            <p className="text-xs uppercase tracking-[0.24em] text-primary/56">Email</p>
+                            <div className="mt-6 flex items-start gap-4">
+                                <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-border bg-secondary text-primary">
+                                    <Mail className="h-5 w-5" />
+                                </div>
+                                <div>
+                                    <h2 className="font-serif text-2xl text-primary md:text-3xl">Direct enquiries</h2>
+                                    <p className="mt-3 max-w-[34rem] text-sm leading-relaxed text-primary/72 md:text-base">
+                                        For bespoke orders and enquiries, email me directly and I&apos;ll get back to you as soon as possible.
+                                    </p>
+                                    <a
+                                        href="mailto:hello@moosflowers.com"
+                                        className="mt-5 inline-flex items-center gap-2 text-base text-primary underline decoration-primary/25 underline-offset-4 transition-colors hover:text-primary/75"
+                                    >
+                                        hello@moosflowers.com
+                                    </a>
+                                    <div className="mt-7 grid gap-4 border-t border-primary/10 pt-6 sm:grid-cols-2">
+                                        <div>
+                                            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-primary/52">Response Time</p>
+                                            <p className="mt-2 text-sm text-primary/78 md:text-base">Usually within 1–2 working days.</p>
+                                        </div>
+                                        <div>
+                                            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-primary/52">Based</p>
+                                            <p className="mt-2 text-sm text-primary/78 md:text-base">Suffolk–Essex border, United Kingdom.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section className="rounded-[1.6rem] border border-border bg-card px-6 py-7 shadow-[0_12px_34px_rgba(39,57,48,0.06)] md:px-8 md:py-9">
+                            <p className="text-xs uppercase tracking-[0.24em] text-primary/56">Social</p>
+                            <h2 className="mt-5 font-serif text-2xl text-primary md:text-3xl">Follow along</h2>
+                            <p className="mt-3 max-w-[32rem] text-sm leading-relaxed text-primary/72 md:text-base">
+                                Explore recent work, seasonal flowers, and studio updates on Instagram and Facebook, and feel free to get in touch there too.
+                            </p>
+
+                            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+                                {socialLinks.map((item) => {
+                                    const Icon = item.icon
+
+                                    return (
+                                        <a
+                                            key={item.title}
+                                            href={item.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="group rounded-[1.25rem] border border-border bg-card px-5 py-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-[0_12px_24px_rgba(39,57,48,0.08)]"
+                                        >
+                                            <div className="flex items-center justify-between gap-3">
+                                                <div className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-secondary text-primary">
+                                                    <Icon className="h-4 w-4" />
+                                                </div>
+                                                <ArrowUpRight className="h-4 w-4 text-primary/50 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                                            </div>
+                                            <h3 className="mt-5 font-serif text-xl text-primary">{item.title}</h3>
+                                            <p className="mt-2 text-sm leading-relaxed text-primary/70">{item.description}</p>
+                                        </a>
+                                    )
+                                })}
+                            </div>
+                        </section>
+                    </div>
+
+                    <section className="mt-12 rounded-[1.8rem] border border-border bg-secondary px-6 py-7 md:mt-14 md:px-8 md:py-9 xl:px-10">
+                        <div className="max-w-2xl">
+                            <p className="text-xs uppercase tracking-[0.24em] text-primary/56">Follow Along</p>
+                            <h2 className="mt-4 font-serif text-3xl text-primary md:text-4xl">Latest on Instagram & Facebook</h2>
+                            <p className="mt-4 text-sm leading-relaxed text-primary/72 md:text-base">
+                                These preview cards act as graceful social placeholders and link directly out to my latest updates until full embeds are needed.
+                            </p>
+                        </div>
+
+                        <div className="mt-8 grid gap-6 lg:grid-cols-2">
+                            {socialPreviews.map((item) => (
+                                <a
+                                    key={item.title}
+                                    href={item.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group overflow-hidden rounded-[1.4rem] border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(39,57,48,0.08)]"
+                                >
+                                    <div className="relative aspect-[16/10] overflow-hidden">
+                                        <Image
+                                            src={item.image}
+                                            alt={item.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                                        />
+                                    </div>
+                                    <div className="px-5 py-5 md:px-6 md:py-6">
+                                        <p className="text-[0.68rem] uppercase tracking-[0.24em] text-primary/56">{item.label}</p>
+                                        <div className="mt-4 flex items-start justify-between gap-4">
+                                            <h3 className="max-w-[24rem] font-serif text-xl text-primary md:text-[1.7rem]">
+                                                {item.title}
+                                            </h3>
+                                            <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-primary/55 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                                        </div>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                    </section>
+
+                    <section className="mt-12 border-t border-primary/12 pt-10 md:mt-14 md:pt-12">
+                        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+                            <div>
+                                <p className="text-xs uppercase tracking-[0.24em] text-primary/56">Let&apos;s Create Something Beautiful</p>
+                                <h2 className="mt-4 font-serif text-3xl text-primary md:text-4xl">Ready to talk flowers?</h2>
+                                <p className="mt-3 max-w-[40rem] text-sm leading-relaxed text-primary/72 md:text-base">
+                                    Whether you&apos;re planning an event, ordering something bespoke, or simply want to start a conversation, I&apos;d love to hear from you.
+                                </p>
+                            </div>
+                            <a
+                                href="mailto:hello@moosflowers.com"
+                                className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm tracking-wide text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_12px_22px_rgba(36,52,44,0.18)]"
+                            >
+                                Email Me
+                            </a>
+                        </div>
+                    </section>
                 </div>
             </section>
 
