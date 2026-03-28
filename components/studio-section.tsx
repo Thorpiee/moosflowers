@@ -10,7 +10,7 @@ export function StudioSection() {
         className="object-cover"
       />
       <div className="absolute inset-0" />
-      
+
       <div className="relative max-w-lg mx-auto">
         <div className="bg-primary/90 text-primary-foreground p-8 md:p-12 text-center">
           <h3 className="font-serif text-2xl md:text-3xl tracking-wide mb-6">The Studio</h3>

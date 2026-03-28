@@ -28,12 +28,12 @@ export function MailingListSidebar() {
         >
           <X className="w-4 h-4" />
         </button>
-        
+
         <h4 className="font-serif text-lg tracking-wide mb-2">Join Our Mailing List</h4>
         <p className="text-xs leading-relaxed mb-4 opacity-90">
           Subscribe for exclusive offers, seasonal updates and beautiful floral inspiration.
         </p>
-        
+
         <form onSubmit={handleSubmit} className="space-y-3">
           <input
             type="email"

@@ -30,11 +30,11 @@ export function ServicesSection() {
           <div className="md:pl-12">
             <h3 className="font-serif text-2xl md:text-3xl tracking-wide mb-6">Wedding Flowers</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Let us help make your special day unforgettable with our bespoke wedding floral services. 
+              Let us help make your special day unforgettable with our bespoke wedding floral services.
               From intimate ceremonies to grand celebrations, we create stunning arrangements tailored to your vision.
             </p>
-            <Link 
-              href="#" 
+            <Link
+              href="#"
               className="inline-block text-xs tracking-wide underline underline-offset-4 hover:text-primary transition-colors"
             >
               Book a Consultation

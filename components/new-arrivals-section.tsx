@@ -33,7 +33,7 @@ export function NewArrivalsSection() {
     <section className="py-16 md:py-24 px-4 md:px-8 bg-card">
       <div className="max-w-7xl mx-auto">
         <h3 className="font-serif text-2xl md:text-3xl tracking-wide text-center mb-12">New In</h3>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {products.map((product) => (
             <Link key={product.name} href={product.href} className="group">

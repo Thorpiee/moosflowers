@@ -14,7 +14,7 @@ export function Header() {
       <div className="bg-primary text-primary-foreground py-5 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-center relative">
           {/* Mobile menu button */}
-          <button 
+          <button
             className="md:hidden absolute left-0"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"

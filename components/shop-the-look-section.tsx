@@ -6,7 +6,7 @@ export function ShopTheLookSection() {
     <section className="py-16 md:py-24 px-4 md:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         <h3 className="font-serif text-2xl md:text-3xl tracking-wide text-center mb-12">Shop The Look</h3>
-        
+
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Main image */}
           <div className="relative aspect-[4/5] overflow-hidden">
@@ -17,13 +17,13 @@ export function ShopTheLookSection() {
               className="object-cover"
             />
             {/* Hotspot dots */}
-            <button 
+            <button
               className="absolute top-1/3 left-1/2 w-6 h-6 bg-white rounded-full border-2 border-primary flex items-center justify-center hover:scale-110 transition-transform"
               aria-label="View product"
             >
               <span className="w-2 h-2 bg-primary rounded-full" />
             </button>
-            <button 
+            <button
               className="absolute top-2/3 left-1/3 w-6 h-6 bg-white rounded-full border-2 border-primary flex items-center justify-center hover:scale-110 transition-transform"
               aria-label="View product"
             >
