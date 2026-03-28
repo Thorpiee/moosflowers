@@ -133,3 +133,61 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Scroll-triggered fade animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.9s ease forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.9s ease forwards;
+}
+
+.animation-delay-100 {
+  animation-delay: 0.15s;
+  opacity: 0;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+/* Section reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover scale for gallery */
+.group:hover .group-hover\:scale-108 {
+  transform: scale(1.08);
+}

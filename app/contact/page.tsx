@@ -9,6 +9,13 @@ export default function ContactPage() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
+
+        const subject = encodeURIComponent(`Website enquiry from ${form.name}`)
+        const body = encodeURIComponent(
+            `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+        )
+
+        window.location.href = `mailto:hello@moosflowers.com?subject=${subject}&body=${body}`
         setForm({ name: "", email: "", message: "" })
     }
 

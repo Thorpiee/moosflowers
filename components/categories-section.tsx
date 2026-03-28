@@ -28,7 +28,7 @@ export function CategoriesSection() {
           <div className="md:w-1/4">
             <h3 className="font-serif text-2xl md:text-3xl tracking-wide mb-4">Your Daily Essentials</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Discover our curated collection for your everyday floral needs.
+              Discover my curated collection for your everyday floral needs.
             </p>
             <Link href="#" className="text-xs tracking-wide underline underline-offset-4 hover:text-primary transition-colors">
               Shop All

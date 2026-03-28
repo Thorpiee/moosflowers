@@ -34,15 +34,15 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-16 md:py-24 px-4 md:px-8 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 md:py-24 px-4 md:px-8 xl:px-10 bg-background">
+      <div className="max-w-[88rem] mx-auto">
         <p className="text-xs tracking-wide text-center mb-2">Testimonials</p>
-        <h3 className="font-serif text-2xl md:text-3xl tracking-wide text-center mb-2">Our customers love us</h3>
-        <p className="text-muted-foreground text-sm text-center mb-12">from 500 reviews</p>
+        <h3 className="font-serif text-3xl md:text-4xl xl:text-5xl tracking-wide text-center mb-2">My customers love us</h3>
+        <p className="text-muted-foreground text-base text-center mb-12">from 500 reviews</p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.name} className="text-center">
+            <div key={testimonial.name} className="text-center bg-secondary/65 border border-primary/10 p-4 xl:p-5">
               <div className="relative aspect-square overflow-hidden mb-4">
                 <Image
                   src={testimonial.image || "/placeholder.svg"}
@@ -56,8 +56,8 @@ export function TestimonialsSection() {
                   <Star key={i} className="w-3 h-3 fill-accent text-accent" />
                 ))}
               </div>
-              <p className="text-xs leading-relaxed mb-3 line-clamp-3">{testimonial.text}</p>
-              <p className="text-xs font-medium">{testimonial.name}</p>
+              <p className="text-sm leading-relaxed mb-3 line-clamp-3">{testimonial.text}</p>
+              <p className="text-sm font-medium">{testimonial.name}</p>
               <p className="text-xs text-muted-foreground">{testimonial.date}</p>
             </div>
           ))}

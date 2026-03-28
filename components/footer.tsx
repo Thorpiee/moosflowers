@@ -3,8 +3,8 @@ import { Instagram, Facebook } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-card py-12 md:py-16 px-4 md:px-8 border-t border-border">
-      <div className="max-w-7xl mx-auto">
+    <footer className="bg-card py-12 md:py-16 px-4 md:px-8 xl:px-10 border-t border-border">
+      <div className="max-w-[88rem] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Info */}
           <div>

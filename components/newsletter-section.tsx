@@ -24,13 +24,13 @@ export function NewsletterSection() {
         className="object-cover"
       />
       <div className="absolute inset-0 bg-black/50" />
-      
+
       <div className="relative max-w-4xl mx-auto text-center text-white">
         <h3 className="font-serif text-2xl md:text-4xl tracking-wider mb-4">WIN! FOR YOU AND A FRIEND</h3>
         <p className="text-sm tracking-wide mb-8 max-w-md mx-auto">
-          Sign up to our newsletter for a chance to win gorgeous seasonal blooms
+          Sign up to my newsletter for a chance to win gorgeous seasonal blooms
         </p>
-        
+
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
           <input
             type="email"

@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 
 export const metadata = {
     title: "Bespoke Gallery | Moo's Flowers",
-    description: "Browse our bespoke floral arrangements and custom bouquets.",
+    description: "Browse my bespoke floral arrangements and custom bouquets.",
 }
 
 export default function BespokeGalleryPage() {
@@ -15,7 +15,7 @@ export default function BespokeGalleryPage() {
                 <div className="max-w-7xl mx-auto">
                     <h1 className="font-serif text-3xl md:text-5xl tracking-wide text-center mb-4">Bespoke Gallery</h1>
                     <p className="text-center text-muted-foreground text-sm tracking-wide mb-12 max-w-xl mx-auto">
-                        Every arrangement is crafted with care and intention. Explore our portfolio of bespoke florals created for weddings, events, and special occasions.
+                        Every arrangement is crafted with care and intention. Explore my portfolio of bespoke florals created for weddings, events, and special occasions.
                     </p>
 
                     {/* Gallery grid placeholder */}
