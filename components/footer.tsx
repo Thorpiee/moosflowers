@@ -3,12 +3,12 @@ import { Instagram, Facebook } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-card py-14 md:py-18 px-4 md:px-8 xl:px-10 border-t border-border/80">
-      <div className="max-w-[80rem] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-14 mb-12 md:mb-14">
+    <footer className="border-t border-border/80 bg-card px-4 py-12 sm:py-14 md:px-8 md:py-16 xl:px-10 xl:py-18">
+      <div className="mx-auto max-w-[88rem]">
+        <div className="mb-10 grid grid-cols-1 gap-9 sm:grid-cols-2 md:mb-12 md:gap-10 lg:grid-cols-3 lg:gap-14">
           {/* Pages */}
           <div>
-            <h4 className="text-sm tracking-wide font-medium mb-4 text-foreground">Pages</h4>
+            <h4 className="mb-4 text-sm font-medium tracking-wide text-foreground">Pages</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
               <li><Link href="/bespoke-gallery" className="hover:text-foreground transition-colors">Bespoke Gallery</Link></li>
@@ -19,7 +19,7 @@ export function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="text-sm tracking-wide font-medium mb-4 text-foreground">Social</h4>
+            <h4 className="mb-4 text-sm font-medium tracking-wide text-foreground">Social</h4>
             <div className="flex gap-4">
               <Link
                 href="https://www.instagram.com/moosflowers/"
@@ -44,7 +44,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm tracking-wide font-medium mb-4 text-foreground">Get In Touch</h4>
+            <h4 className="mb-4 text-sm font-medium tracking-wide text-foreground">Get In Touch</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               <li><a href="mailto:hello@moosflowers.com" className="hover:text-foreground transition-colors">hello@moosflowers.com</a></li>
               <li><Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
@@ -53,7 +53,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-7 border-t border-border/80 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-border/80 pt-7 md:flex-row">
           <p className="text-sm text-muted-foreground">© 2026 Moos Flowers</p>
         </div>
       </div>

@@ -38,22 +38,22 @@ const workItems: WorkItem[] = [
 
 export function MyWorkSection() {
     return (
-        <section className="bg-background py-24 md:py-28 px-4 md:px-8 xl:px-10" aria-labelledby="my-work-heading">
+        <section className="bg-background px-4 py-16 sm:py-20 md:px-8 md:py-24 xl:px-10 xl:py-28" aria-labelledby="my-work-heading">
             <div className="max-w-[88rem] mx-auto">
-                <div className="mb-10">
+                <div className="mb-9 md:mb-10">
                     <div className="max-w-3xl">
-                        <h2 id="my-work-heading" className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary tracking-wide">
+                        <h2 id="my-work-heading" className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary tracking-wide">
                             My Work
                         </h2>
                         <div className="mt-4 h-px w-28 bg-primary/30" />
-                        <p className="mt-6 text-base md:text-lg xl:text-xl text-primary/80 leading-relaxed">
+                        <p className="mt-5 text-[0.98rem] sm:text-base md:text-lg xl:text-xl text-primary/80 leading-relaxed">
                             Explore a portfolio of thoughtfully designed floral arrangements, crafted for every occasion
                         </p>
                     </div>
                 </div>
 
                 <div
-                    className="flex md:grid md:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-7 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-2"
+                    className="flex md:grid md:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6 xl:gap-7 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-2"
                     role="list"
                     aria-label="Floral portfolio showcase"
                 >
@@ -61,7 +61,7 @@ export function MyWorkSection() {
                         <article
                             key={item.title}
                             role="listitem"
-                            className="group min-w-[78%] sm:min-w-[48%] md:min-w-0 bg-card border border-border shadow-[0_8px_30px_rgba(48,66,57,0.08)] p-5 md:p-6 flex flex-col snap-start transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(48,66,57,0.14)]"
+                            className="group min-w-[84%] sm:min-w-[56%] md:min-w-0 bg-card border border-border shadow-[0_8px_30px_rgba(48,66,57,0.08)] p-4 sm:p-5 md:p-6 flex flex-col snap-start transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(48,66,57,0.14)]"
                         >
                             <div className="relative aspect-[4/5] overflow-hidden border border-border">
                                 <Image
@@ -75,7 +75,7 @@ export function MyWorkSection() {
                             <div className="mt-4 flex items-start justify-between gap-3">
                                 <div>
                                     <p className="text-xs tracking-[0.16em] uppercase text-primary/65">{item.label}</p>
-                                    <h3 className="mt-2 font-serif text-[1.35rem] xl:text-2xl text-primary leading-snug">{item.title}</h3>
+                                    <h3 className="mt-2 font-serif text-[1.22rem] sm:text-[1.3rem] xl:text-2xl text-primary leading-snug">{item.title}</h3>
                                 </div>
                             </div>
                         </article>

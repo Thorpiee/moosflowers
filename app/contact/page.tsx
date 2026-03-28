@@ -43,20 +43,20 @@ export default function ContactPage() {
         <main className="min-h-screen">
             <Header />
 
-            <section className="bg-background px-4 py-16 md:px-8 md:py-24 xl:px-10">
+            <section className="bg-background px-4 py-16 sm:py-20 md:px-8 md:py-24 xl:px-10 xl:py-28">
                 <div className="mx-auto max-w-[88rem]">
                     <div className="max-w-3xl">
                         <p className="text-xs uppercase tracking-[0.28em] text-primary/58">Contact</p>
-                        <h1 className="mt-4 font-serif text-4xl tracking-wide text-primary md:text-6xl">
+                        <h1 className="mt-4 font-serif text-4xl tracking-wide text-primary sm:text-5xl md:text-6xl">
                             Contact Me
                         </h1>
                         <div className="mt-5 h-px w-24 bg-primary/25" />
-                        <p className="mt-7 max-w-[42rem] text-base leading-relaxed text-primary/78 md:text-lg">
+                        <p className="mt-6 max-w-[42rem] text-[0.98rem] leading-relaxed text-primary/78 sm:text-base md:mt-7 md:text-lg">
                             Get in touch for bespoke orders, floral enquiries, collaborations, or just to say hello.
                         </p>
                     </div>
 
-                    <div className="mt-14 grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 xl:mt-16">
+                    <div className="mt-10 grid gap-6 md:mt-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 xl:mt-14">
                         <section className="rounded-[1.6rem] border border-border bg-card px-6 py-7 shadow-[0_12px_34px_rgba(39,57,48,0.08)] md:px-8 md:py-9">
                             <p className="text-xs uppercase tracking-[0.24em] text-primary/56">Email</p>
                             <div className="mt-6 flex items-start gap-4">
@@ -122,7 +122,7 @@ export default function ContactPage() {
                         </section>
                     </div>
 
-                    <section className="mt-12 rounded-[1.8rem] border border-border bg-secondary px-6 py-7 md:mt-14 md:px-8 md:py-9 xl:px-10">
+                    <section className="mt-10 rounded-[1.8rem] border border-border bg-card px-5 py-6 sm:px-6 sm:py-7 md:mt-12 md:px-8 md:py-9 xl:px-10">
                         <div className="max-w-2xl">
                             <p className="text-xs uppercase tracking-[0.24em] text-primary/56">Follow Along</p>
                             <h2 className="mt-4 font-serif text-3xl text-primary md:text-4xl">Latest on Instagram & Facebook</h2>
@@ -131,7 +131,7 @@ export default function ContactPage() {
                             </p>
                         </div>
 
-                        <div className="mt-8 grid gap-6 lg:grid-cols-2">
+                        <div className="mt-8 grid gap-5 md:gap-6 lg:grid-cols-2">
                             {socialPreviews.map((item) => (
                                 <a
                                     key={item.title}
@@ -162,7 +162,7 @@ export default function ContactPage() {
                         </div>
                     </section>
 
-                    <section className="mt-12 border-t border-primary/12 pt-10 md:mt-14 md:pt-12">
+                    <section className="mt-10 border-t border-primary/12 pt-9 md:mt-12 md:pt-11 lg:mt-14 lg:pt-12">
                         <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
                             <div>
                                 <p className="text-xs uppercase tracking-[0.24em] text-primary/56">Let&apos;s Create Something Beautiful</p>
