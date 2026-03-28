@@ -146,7 +146,7 @@ export function GallerySection() {
         <section className="bg-background px-4 pb-16 pt-16 sm:pb-20 sm:pt-20 md:px-8 md:pb-24 md:pt-24 xl:px-10 xl:pb-28 xl:pt-28">
             <div className="max-w-[88rem] mx-auto">
                 {/* Header */}
-            <div className="mb-12 text-center md:mb-16 lg:mb-20 xl:mb-24">
+                <div className="mb-12 text-center md:mb-16 lg:mb-20 xl:mb-24">
                     <div className="flex items-center justify-center gap-3 mb-4">
                         <div className="h-px bg-gradient-to-l from-primary/25 to-transparent max-w-20 w-20" />
                         <span className="text-xs tracking-[0.3em] uppercase font-medium text-primary/60">
@@ -216,8 +216,8 @@ export function GallerySection() {
                                 key={index}
                                 onClick={() => goToSlide(index)}
                                 className={`transition-all duration-300 rounded-full ${index === currentSlide
-                                        ? 'w-9 h-2 bg-white'
-                                        : 'w-2 h-2 bg-white/55 hover:bg-white/80'
+                                    ? 'w-9 h-2 bg-white'
+                                    : 'w-2 h-2 bg-white/55 hover:bg-white/80'
                                     }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />
@@ -277,8 +277,8 @@ export function GallerySection() {
                                 type="button"
                                 onClick={() => goToSlide(index)}
                                 className={`group relative aspect-square overflow-hidden rounded-lg border transition-all duration-300 ${index === currentSlide
-                                        ? 'border-primary/70 ring-1 ring-primary/45'
-                                        : 'border-primary/15 hover:border-primary/40'
+                                    ? 'border-primary/70 ring-1 ring-primary/45'
+                                    : 'border-primary/15 hover:border-primary/40'
                                     }`}
                                 aria-label={`Preview slide ${index + 1}: ${item.title}`}
                                 aria-current={index === currentSlide}
