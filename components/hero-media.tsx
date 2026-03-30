@@ -14,26 +14,23 @@ type NetworkInformation = {
     effectiveType?: string
 }
 
-function getVideoPreloadStrategy(): "none" | "metadata" {
+function getVideoPreloadStrategy(): "metadata" | "auto" {
     if (typeof window === "undefined") {
-        return "metadata"
+        return "auto"
     }
 
-    const isMobileViewport = window.matchMedia("(max-width: 768px)").matches
     const connection = (navigator as Navigator & { connection?: NetworkInformation }).connection
     const isSlowNetwork = connection?.saveData || ["slow-2g", "2g", "3g"].includes(connection?.effectiveType ?? "")
 
-    return isMobileViewport || isSlowNetwork ? "none" : "metadata"
+    return isSlowNetwork ? "metadata" : "auto"
 }
 
 export function HeroMedia() {
-    const wrapperRef = useRef<HTMLDivElement | null>(null)
     const videoRef = useRef<HTMLVideoElement | null>(null)
-    const [shouldLoadVideo, setShouldLoadVideo] = useState(false)
     const [isVideoPlaying, setIsVideoPlaying] = useState(false)
     const [autoplayBlocked, setAutoplayBlocked] = useState(false)
     const [videoFailed, setVideoFailed] = useState(false)
-    const [preloadStrategy, setPreloadStrategy] = useState<"none" | "metadata">("metadata")
+    const [preloadStrategy, setPreloadStrategy] = useState<"metadata" | "auto">("auto")
     const [posterSrc, setPosterSrc] = useState(HERO_POSTER_SRC)
 
     function attemptPlayback() {
@@ -63,38 +60,17 @@ export function HeroMedia() {
     }, [])
 
     useEffect(() => {
-        const node = wrapperRef.current
-        if (!node) return
+        const video = videoRef.current
+        if (!video || videoFailed) return
 
-        if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
-            setShouldLoadVideo(true)
-            return
-        }
+        video.load()
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const entry = entries[0]
-                if (entry?.isIntersecting) {
-                    setShouldLoadVideo(true)
-                    observer.disconnect()
-                }
-            },
-            {
-                rootMargin: "180px 0px",
-                threshold: 0.15,
-            }
-        )
+        const frame = window.requestAnimationFrame(() => {
+            attemptPlayback()
+        })
 
-        observer.observe(node)
-
-        return () => observer.disconnect()
-    }, [])
-
-    useEffect(() => {
-        if (!shouldLoadVideo || videoFailed) return
-
-        attemptPlayback()
-    }, [shouldLoadVideo, videoFailed])
+        return () => window.cancelAnimationFrame(frame)
+    }, [preloadStrategy, videoFailed])
 
     useEffect(() => {
         if (!autoplayBlocked) return
@@ -108,7 +84,7 @@ export function HeroMedia() {
     }, [autoplayBlocked])
 
     return (
-        <div ref={wrapperRef} className="relative h-full w-full">
+        <div className="relative h-full w-full">
             <Image
                 src={posterSrc}
                 alt="Seasonal floral arrangement by Moo's Flowers in Suffolk and Essex"
@@ -122,7 +98,7 @@ export function HeroMedia() {
                 )}
             />
 
-            {shouldLoadVideo && !videoFailed ? (
+            {!videoFailed ? (
                 <video
                     ref={videoRef}
                     autoPlay
@@ -132,6 +108,7 @@ export function HeroMedia() {
                     preload={preloadStrategy}
                     poster={posterSrc}
                     onCanPlay={attemptPlayback}
+                    onCanPlayThrough={attemptPlayback}
                     onLoadedData={attemptPlayback}
                     onLoadedMetadata={attemptPlayback}
                     onPlay={() => {
