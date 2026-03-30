@@ -15,25 +15,25 @@ const workItems: WorkItem[] = [
         title: "Christmas Wreath",
         label: "Seasonal",
         image: "/flowers1.jpg",
-        alt: "Spring bridal bouquet with seasonal florals",
+        alt: "Seasonal Christmas wreath by Moo's Flowers on the Suffolk-Essex border",
     },
     {
         title: "Living Wreath",
         label: "Seasonal",
         image: "/flowers2.jpg",
-        alt: "Romantic floral centrepiece arrangement",
+        alt: "Living wreath crafted by Moo's Flowers, natural florist in Essex",
     },
     {
         title: "Structured Hand-tied",
         label: "everyday",
         image: "/flowers3.jpg",
-        alt: "Pastel celebration floral arrangement",
+        alt: "Structured hand-tied bouquet by Moo's Flowers near Ipswich",
     },
     {
         title: "Natural Living Wreath",
         label: "Seasonal",
         image: "/flowers4.jpg",
-        alt: "Elegant white roses bouquet",
+        alt: "Natural living wreath created by Moo's Flowers for a Colchester home",
     },
 ]
 
@@ -44,11 +44,11 @@ export function MyWorkSection() {
                 <RevealOnScroll className="mb-9 md:mb-10">
                     <div className="max-w-3xl">
                         <h2 id="my-work-heading" className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary tracking-wide">
-                            My Work
+                            Seasonal Flowers for Weddings, Gifts & Home
                         </h2>
                         <div className="mt-4 h-px w-28 bg-primary/30" />
                         <p className="mt-5 text-[0.98rem] sm:text-base md:text-lg xl:text-xl text-primary/80 leading-relaxed">
-                            Explore a portfolio of thoughtfully designed floral arrangements, crafted for every occasion
+                            Explore floral arrangements for weddings, events, gifts, and home styling across Suffolk, Essex, Ipswich, and Colchester.
                         </p>
                     </div>
                 </RevealOnScroll>

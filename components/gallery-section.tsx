@@ -11,6 +11,7 @@ interface GallerySlide {
     title: string
     category: string
     description: string
+    alt: string
     image: string
     objectPosition?: string
 }
@@ -21,6 +22,7 @@ const gallerySlides: GallerySlide[] = [
         title: 'Autumn Harvest',
         category: 'Seasonal',
         description: 'A vibrant blend of seasonal blooms and textured foliage.',
+        alt: "Seasonal bouquet with textured foliage by Moo's Flowers, florist in Suffolk",
         image: '/images/flowers1.jpg',
         objectPosition: '50% 52%',
     },
@@ -29,6 +31,7 @@ const gallerySlides: GallerySlide[] = [
         title: 'Bridal Elegance',
         category: 'Weddings',
         description: 'Timeless beauty for your most cherished moment.',
+        alt: "Natural bridal bouquet by Moo's Flowers, wedding florist in Essex",
         image: '/images/flowers2.jpg',
         objectPosition: '50% 48%',
     },
@@ -37,6 +40,7 @@ const gallerySlides: GallerySlide[] = [
         title: 'Garden Romance',
         category: 'Bouquets',
         description: 'Loose and romantic arrangement in soft pastels.',
+        alt: "Romantic pastel bouquet arranged by Moo's Flowers near Ipswich",
         image: '/images/flowers3.jpg',
         objectPosition: '52% 52%',
     },
@@ -45,6 +49,7 @@ const gallerySlides: GallerySlide[] = [
         title: 'Wedding Bliss',
         category: 'Weddings',
         description: 'Romantic garden-style design for special occasions.',
+        alt: "Garden-style wedding flowers for an Essex celebration by Moo's Flowers",
         image: '/images/flowers5.jpg',
         objectPosition: '50% 46%',
     },
@@ -53,6 +58,7 @@ const gallerySlides: GallerySlide[] = [
         title: 'Ethereal Beauty',
         category: 'Bouquets',
         description: 'Dreamy and delicate arrangement of choice blooms.',
+        alt: "Delicate hand-tied bouquet by Moo's Flowers on the Suffolk-Essex border",
         image: '/images/flowers6.jpg',
         objectPosition: '50% 40%',
     },
@@ -61,6 +67,7 @@ const gallerySlides: GallerySlide[] = [
         title: 'Spring Celebration',
         category: 'Seasonal',
         description: 'Fresh and bright arrangement capturing spring energy.',
+        alt: "Spring floral arrangement created by Moo's Flowers for an Ipswich home",
         image: '/images/flowers7.jpg',
         objectPosition: '50% 50%',
     },
@@ -69,6 +76,7 @@ const gallerySlides: GallerySlide[] = [
         title: 'Timeless Elegance',
         category: 'Events',
         description: 'Sophisticated design for elevated occasions.',
+        alt: "Elegant event flowers by Moo's Flowers for a Colchester celebration",
         image: '/images/flowers8.jpg',
         objectPosition: '52% 48%',
     },
@@ -77,6 +85,7 @@ const gallerySlides: GallerySlide[] = [
         title: 'Luxe Arrangement',
         category: 'Events',
         description: 'Premium selection of the finest seasonal blooms.',
+        alt: "Premium seasonal floral arrangement by Moo's Flowers in Suffolk",
         image: '/images/flowers9.jpg',
         objectPosition: '50% 42%',
     },
@@ -147,7 +156,7 @@ export function GallerySection() {
         <section className="section-space bg-background layout-shell">
             <div className="layout-container">
                 {/* Header */}
-                <RevealOnScroll className="mb-12 text-center md:mb-16 lg:mb-20">
+                <RevealOnScroll className="mb-8 text-center md:mb-10 lg:mb-12">
                     <div className="flex items-center justify-center gap-3 mb-4">
                         <div className="h-px bg-gradient-to-l from-primary/25 to-transparent max-w-20 w-20" />
                         <span className="text-xs tracking-[0.3em] uppercase font-medium text-primary/60">
@@ -155,83 +164,108 @@ export function GallerySection() {
                         </span>
                         <div className="h-px bg-gradient-to-r from-primary/25 to-transparent max-w-20 w-20" />
                     </div>
-                    <h2 className="mb-6 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide text-primary">
-                        Bespoke Gallery
-                    </h2>
-                    <p className="mx-auto max-w-2xl text-[0.98rem] leading-relaxed text-primary/70 sm:text-base md:text-lg">
-                        A rotating collection of thoughtfully designed arrangements created for weddings, celebrations, and life's most memorable occasions.
+                    <h1 className="mb-4 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[3.9rem] tracking-wide text-primary">
+                        Bespoke Wedding Flowers & Floral Gallery
+                    </h1>
+                    <p className="mx-auto max-w-2xl text-[0.96rem] leading-relaxed text-primary/70 sm:text-base md:text-[1.02rem]">
+                        Explore bespoke wedding flowers, bouquets, and event floristry by Moo's Flowers, a natural florist serving Suffolk, Essex, Ipswich, Colchester, and the surrounding countryside.
                     </p>
                 </RevealOnScroll>
 
-                {/* Carousel */}
-                <RevealOnScroll className="relative" delayMs={80}>
-                    {/* Main Image */}
-                    <div
-                        className="relative mx-auto w-full max-w-5xl aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card cursor-zoom-in sm:aspect-[5/6] lg:aspect-[4/5]"
-                        onClick={openLightbox}
-                        onKeyDown={(event) => {
-                            if (event.key === 'Enter' || event.key === ' ') {
-                                event.preventDefault()
-                                openLightbox()
-                            }
-                        }}
-                        role="button"
-                        tabIndex={0}
-                        aria-label={`Open ${slide.title} fullscreen`}
-                    >
-                        <Image
-                            key={slide.id}
-                            src={slide.image}
-                            alt={slide.title}
-                            fill
-                            className="object-cover"
-                            style={{ objectPosition: slide.objectPosition ?? '50% 50%' }}
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 80vw"
-                            priority
-                        />
-                        {/* Subtle overlay gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-                    </div>
-
-                    {/* Navigation Controls */}
-                    <button
-                        onClick={prevSlide}
-                        className="btn-premium absolute left-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/35 bg-black/35 text-white shadow-[0_10px_24px_rgba(18,24,21,0.2)] hover:border-white/55 hover:bg-black/45 sm:left-4 sm:h-12 sm:w-12 md:left-6 md:h-14 md:w-14 backdrop-blur-md"
-                        aria-label="Previous slide"
-                    >
-                        <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-                    </button>
-
-                    <button
-                        onClick={nextSlide}
-                        className="btn-premium absolute right-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/35 bg-black/35 text-white shadow-[0_10px_24px_rgba(18,24,21,0.2)] hover:border-white/55 hover:bg-black/45 sm:right-4 sm:h-12 sm:w-12 md:right-6 md:h-14 md:w-14 backdrop-blur-md"
-                        aria-label="Next slide"
-                    >
-                        <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-                    </button>
-
-                    {/* Dot Indicators */}
-                    <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2.5 sm:bottom-5 md:bottom-7">
-                        {gallerySlides.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => goToSlide(index)}
-                                className={`transition-all duration-300 rounded-full ${index === currentSlide
-                                    ? 'w-9 h-2 bg-white'
-                                    : 'w-2 h-2 bg-white/55 hover:bg-white/80'
-                                    }`}
-                                aria-label={`Go to slide ${index + 1}`}
+                {/* Highlighted Collection */}
+                <RevealOnScroll className="mx-auto max-w-4xl" delayMs={80}>
+                    <div className="overflow-hidden rounded-[1.5rem] border border-border/85 bg-card shadow-[0_16px_34px_rgba(34,48,42,0.1)]">
+                        <div
+                            className="group relative aspect-[4/3] cursor-zoom-in overflow-hidden sm:aspect-[16/11] lg:aspect-[16/10]"
+                            onClick={openLightbox}
+                            onKeyDown={(event) => {
+                                if (event.key === 'Enter' || event.key === ' ') {
+                                    event.preventDefault()
+                                    openLightbox()
+                                }
+                            }}
+                            role="button"
+                            tabIndex={0}
+                            aria-label={`Open ${slide.title} fullscreen`}
+                        >
+                            <Image
+                                key={slide.id}
+                                src={slide.image}
+                                alt={slide.alt}
+                                fill
+                                className="animate-featured-image-swap object-cover"
+                                style={{ objectPosition: slide.objectPosition ?? '50% 50%' }}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 84vw, 900px"
+                                priority={currentSlide === 0}
+                                loading={currentSlide === 0 ? 'eager' : 'lazy'}
                             />
-                        ))}
-                    </div>
-                </RevealOnScroll>
 
-                <RevealOnScroll className="mx-auto mt-5 max-w-5xl px-1 sm:mt-6" delayMs={120}>
-                    <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/56">{slide.category}</p>
-                    <h3 className="mt-2 font-serif text-2xl text-primary sm:text-3xl">{slide.title}</h3>
-                    <p className="mt-2 max-w-3xl text-[0.98rem] leading-relaxed text-primary/72 sm:text-base md:text-lg">
-                        {slide.description}
-                    </p>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/28 via-black/5 to-transparent" />
+
+                            <div className="absolute left-4 top-4 z-20 rounded-full border border-white/40 bg-black/28 px-3 py-1 text-[0.62rem] font-medium uppercase tracking-[0.22em] text-white/95 backdrop-blur-sm sm:left-5 sm:top-5">
+                                {slide.category}
+                            </div>
+
+                            <div className="absolute bottom-4 right-4 z-20 rounded-full border border-white/30 bg-black/26 px-3 py-1 text-[0.62rem] uppercase tracking-[0.18em] text-white/90 backdrop-blur-sm sm:bottom-5 sm:right-5">
+                                {currentSlide + 1} / {gallerySlides.length}
+                            </div>
+
+                            <button
+                                type="button"
+                                onClick={(event) => {
+                                    event.stopPropagation()
+                                    prevSlide()
+                                }}
+                                className="btn-premium absolute left-3 top-1/2 z-20 inline-flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/45 bg-card/82 text-primary shadow-[0_8px_20px_rgba(21,31,27,0.18)] hover:bg-card sm:left-4 sm:h-10 sm:w-10 md:left-5 md:h-11 md:w-11"
+                                aria-label="Previous slide"
+                            >
+                                <ChevronLeft className="h-4 w-4" />
+                            </button>
+
+                            <button
+                                type="button"
+                                onClick={(event) => {
+                                    event.stopPropagation()
+                                    nextSlide()
+                                }}
+                                className="btn-premium absolute right-3 top-1/2 z-20 inline-flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/45 bg-card/82 text-primary shadow-[0_8px_20px_rgba(21,31,27,0.18)] hover:bg-card sm:right-4 sm:h-10 sm:w-10 md:right-5 md:h-11 md:w-11"
+                                aria-label="Next slide"
+                            >
+                                <ChevronRight className="h-4 w-4" />
+                            </button>
+                        </div>
+
+                        <div className="border-t border-border/75 px-5 py-4 sm:px-6 sm:py-5 md:px-7 md:py-6">
+                            <h3 className="font-serif text-2xl text-primary sm:text-[2rem] md:text-[2.15rem]">{slide.title}</h3>
+                            <p className="mt-3 max-w-3xl text-[0.96rem] leading-relaxed text-primary/70 sm:text-base md:text-[1.04rem]">
+                                {slide.description}
+                            </p>
+
+                            <div className="mt-5 flex items-center gap-4">
+                                <div className="h-[2px] flex-1 overflow-hidden rounded-full bg-primary/14" aria-hidden="true">
+                                    <div
+                                        className="h-full rounded-full bg-primary/55 transition-[width] duration-500 ease-out"
+                                        style={{ width: `${((currentSlide + 1) / gallerySlides.length) * 100}%` }}
+                                    />
+                                </div>
+
+                                <div className="flex items-center gap-2">
+                                    {gallerySlides.map((item, index) => (
+                                        <button
+                                            key={item.id}
+                                            onClick={() => goToSlide(index)}
+                                            className={`rounded-full transition-all duration-300 ${index === currentSlide
+                                                ? 'h-2 w-8 bg-primary/80'
+                                                : 'h-2 w-2 bg-primary/28 hover:bg-primary/48'
+                                                }`}
+                                            aria-label={`Go to slide ${index + 1}: ${item.title}`}
+                                            aria-current={index === currentSlide}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </RevealOnScroll>
 
                 {isLightboxOpen && (
@@ -258,7 +292,7 @@ export function GallerySection() {
                             <div className="relative h-full w-full">
                                 <Image
                                     src={slide.image}
-                                    alt={`${slide.title} fullscreen`}
+                                    alt={slide.alt}
                                     fill
                                     className="object-contain"
                                     sizes="100vw"
@@ -270,7 +304,7 @@ export function GallerySection() {
                 )}
 
                 {/* Image Previews */}
-                <RevealOnScroll className="mt-8 md:mt-10 lg:mt-12" delayMs={140}>
+                <RevealOnScroll className="mt-6 md:mt-8 lg:mt-10" delayMs={140}>
                     <div className="grid grid-cols-4 gap-2 sm:gap-2.5 md:grid-cols-8 md:gap-3">
                         {gallerySlides.map((item, index) => (
                             <button
@@ -286,7 +320,7 @@ export function GallerySection() {
                             >
                                 <Image
                                     src={item.image}
-                                    alt={item.title}
+                                    alt={item.alt}
                                     fill
                                     className="object-cover"
                                     style={{ objectPosition: item.objectPosition ?? '50% 50%' }}

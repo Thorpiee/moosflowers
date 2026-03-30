@@ -7,8 +7,9 @@ import './globals.css'
 const GA_MEASUREMENT_ID = 'G-QWGSDVEJ81'
 
 export const metadata: Metadata = {
-  title: "Moos Flowers | Beautiful Blooms for Every Occasion",
-  description: 'Handcrafted floral arrangements and bespoke bouquets. Fresh flowers delivered with love.',
+  metadataBase: new URL('https://moosflowers.com'),
+  title: "Moo's Flowers | Florist in Suffolk & Essex",
+  description: 'Natural, seasonal florist on the Suffolk-Essex border creating wedding flowers, bespoke bouquets, and floral arrangements across Suffolk and Essex.',
   generator: 'v0.app',
   icons: {
     icon: [

@@ -1,11 +1,10 @@
-"use client"
-
 import Image from "next/image"
 import Link from "next/link"
 
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
+import type { Metadata } from "next"
 
 import { ArrowUpRight, Facebook, Instagram, Mail } from "lucide-react"
 
@@ -39,6 +38,14 @@ const socialPreviews = [
     },
 ]
 
+export const metadata: Metadata = {
+    title: "Contact Moo's Flowers | Florist Suffolk & Essex",
+    description: "Enquire with Moo's Flowers for wedding flowers, bouquet delivery, and bespoke floral design across Suffolk, Essex, Ipswich, Colchester, and nearby areas.",
+    alternates: {
+        canonical: '/contact',
+    },
+}
+
 export default function ContactPage() {
     return (
         <main className="min-h-screen">
@@ -49,11 +56,11 @@ export default function ContactPage() {
                     <RevealOnScroll className="max-w-3xl">
                         <p className="text-xs uppercase tracking-[0.28em] text-primary/58">Contact</p>
                         <h1 className="mt-4 font-serif text-4xl tracking-wide text-primary sm:text-5xl md:text-6xl">
-                            Contact Me
+                            Contact Moo's Flowers
                         </h1>
                         <div className="mt-5 h-px w-24 bg-primary/25" />
                         <p className="mt-6 max-w-[42rem] text-[0.98rem] leading-relaxed text-primary/78 sm:text-base md:mt-7 md:text-lg">
-                            Get in touch for bespoke orders, floral enquiries, collaborations, or just to say hello.
+                            Get in touch for wedding flowers, bouquet delivery, bespoke arrangements, and floral enquiries across Suffolk, Essex, Ipswich, Colchester, and the surrounding countryside.
                         </p>
                     </RevealOnScroll>
 

@@ -5,6 +5,15 @@ import { BrandStorySection } from "@/components/brand-story-section"
 import { BespokeSection } from "@/components/bespoke-section"
 import { StudioSection } from "@/components/studio-section"
 import { Footer } from "@/components/footer"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Moo's Flowers | Florist in Suffolk & Essex",
+  description: "Natural, seasonal florist on the Suffolk-Essex border creating wedding flowers, gifts, and bespoke arrangements for Ipswich, Colchester, and beyond.",
+  alternates: {
+    canonical: '/',
+  },
+}
 
 export default function Home() {
   return (

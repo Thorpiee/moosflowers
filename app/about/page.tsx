@@ -2,10 +2,14 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
 import Image from "next/image"
+import type { Metadata } from "next"
 
-export const metadata = {
-    title: "About Me | Moo's Flowers",
-    description: "Learn about Moo's Flowers — my story, my passion for floristry, and what makes us unique.",
+export const metadata: Metadata = {
+    title: "About Moo's Flowers | Florist in Suffolk & Essex",
+    description: "Meet Jaz of Moo's Flowers, a natural florist on the Suffolk-Essex border creating seasonal wedding flowers and bespoke arrangements for Ipswich and Colchester.",
+    alternates: {
+        canonical: '/about',
+    },
 }
 
 export default function AboutPage() {
@@ -16,25 +20,25 @@ export default function AboutPage() {
             <section className="section-space layout-shell">
                 <div className="layout-container grid items-start gap-10 md:grid-cols-[0.55fr_0.45fr] lg:gap-14 xl:gap-16">
                     <RevealOnScroll>
-                        <h1 className="mb-6 font-serif text-3xl sm:text-4xl md:text-5xl tracking-wide text-primary">About Me</h1>
+                        <h1 className="mb-6 font-serif text-3xl sm:text-4xl md:text-5xl tracking-wide text-primary">About Moo's Flowers, Florist in Suffolk & Essex</h1>
                         <p className="mb-7 text-[0.98rem] leading-relaxed tracking-wide text-primary/78 sm:text-base md:mb-8">
-                            I’m Jaz, a florist based on the Suffolk–Essex border, originally from the South Devon coast, creating natural, seasonal arrangements. My work celebrates the beauty of everyday moments; from dressing a table for supper to marking special occasions; with flowers that feel relaxed, joyful, and just a little bit wild.
+                            I’m Jaz, the florist behind Moo's Flowers, working from the Suffolk-Essex border and creating natural, seasonal flowers for weddings, events, gifts, and home arrangements across Suffolk, Essex, Ipswich, Colchester, and the surrounding countryside.
                         </p>
                         <p className="mb-7 text-[0.98rem] leading-relaxed tracking-wide text-primary/78 sm:text-base md:mb-8">
-                            I have a real interest in how flowers are grown, foraged, and cared for through the seasons. This curiosity shapes my approach, encouraging me to work with what’s naturally available and to appreciate the character and uniqueness of each stem.
+                            As a wedding florist in Suffolk and Essex, I am drawn to flowers with movement, texture, and seasonality. I love using naturally expressive stems and an eco-conscious approach to design arrangements that feel generous, elegant, and just a little bit wild.
                         </p>
                         <p className="mb-7 text-[0.98rem] leading-relaxed tracking-wide text-primary/78 sm:text-base md:mb-8">
-                            Each design begins with carefully chosen blooms, often influenced by my surroundings; largely the changing countryside seasons. Everything is thoughtfully arranged using natural materials and an eco-conscious approach wherever possible.
+                            Many clients discover Moo's Flowers when searching for a local florist in Ipswich, floral arrangements for the Suffolk countryside, or a bespoke florist for Colchester celebrations. Every design begins with carefully chosen blooms shaped by the season, the setting, and the feeling you want to create.
                         </p>
                         <p className="text-[0.98rem] leading-relaxed tracking-wide text-primary/78 sm:text-base">
-                            Whether you’re planning an event, celebrating something special, or simply want flowers in your home, my designs bring a soft, seasonal touch to any space.
+                            Whether you are planning a wedding, marking a special occasion, or simply want flowers at home, I create arrangements that feel personal, natural, and beautifully at ease in both Suffolk and Essex homes and celebrations.
                         </p>
                     </RevealOnScroll>
 
                     <RevealOnScroll className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem] border border-border bg-card md:sticky md:top-28" delayMs={100}>
                         <Image
                             src="/jaz.jpg"
-                            alt="Jaz from Moo's Flowers"
+                            alt="Jaz, florist behind Moo's Flowers on the Suffolk-Essex border"
                             fill
                             className="object-cover"
                             priority

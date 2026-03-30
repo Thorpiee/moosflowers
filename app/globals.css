@@ -217,6 +217,23 @@
   opacity: 0;
 }
 
+@keyframes featured-image-swap {
+  from {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.animate-featured-image-swap {
+  animation: featured-image-swap 520ms ease-out both;
+  will-change: transform, opacity;
+}
+
 /* Section reveal on scroll */
 .reveal-on-scroll {
   --reveal-delay: 0ms;
@@ -241,6 +258,11 @@
 
   .btn-premium,
   .btn-premium:hover {
+    transform: none;
+  }
+
+  .animate-featured-image-swap {
+    animation: none;
     transform: none;
   }
 }
