@@ -104,7 +104,7 @@ export function HeroSection() {
             {/* ── Right: video column ── */}
             <div className="relative flex items-center justify-center px-4 pb-8 pt-0 sm:px-6 sm:pb-10 sm:pt-0 lg:px-8 lg:py-10 xl:px-10 xl:py-12">
               <div
-                className="relative w-full max-w-[28rem] aspect-[5/6] overflow-hidden rounded-[1.45rem] border border-border shadow-[0_14px_30px_rgba(28,44,38,0.14)] sm:max-w-[31rem] sm:aspect-[4/5] lg:max-w-[34rem] lg:translate-x-3 xl:max-w-[36rem] animate-fade-in-up"
+                className="relative w-full max-w-[23rem] aspect-[4/5] overflow-hidden rounded-[1.45rem] border border-border shadow-[0_14px_30px_rgba(28,44,38,0.14)] sm:max-w-[29rem] sm:aspect-[5/6] lg:max-w-[34rem] lg:translate-x-3 xl:max-w-[36rem] animate-fade-in-up"
                 style={{ animationDelay: "0.35s", opacity: 0 }}
               >
                 <HeroMedia />

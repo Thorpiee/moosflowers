@@ -28,11 +28,31 @@ function getVideoPreloadStrategy(): "none" | "metadata" {
 
 export function HeroMedia() {
     const wrapperRef = useRef<HTMLDivElement | null>(null)
+    const videoRef = useRef<HTMLVideoElement | null>(null)
     const [shouldLoadVideo, setShouldLoadVideo] = useState(false)
-    const [isVideoReady, setIsVideoReady] = useState(false)
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false)
     const [videoFailed, setVideoFailed] = useState(false)
     const [preloadStrategy, setPreloadStrategy] = useState<"none" | "metadata">("metadata")
     const [posterSrc, setPosterSrc] = useState(HERO_POSTER_SRC)
+
+    function attemptPlayback() {
+        const video = videoRef.current
+        if (!video || videoFailed) return
+
+        const playback = video.play()
+
+        if (!playback || typeof playback.catch !== "function") {
+            return
+        }
+
+        playback.catch((error: unknown) => {
+            if (error instanceof DOMException && error.name === "AbortError") {
+                return
+            }
+
+            setVideoFailed(true)
+        })
+    }
 
     useEffect(() => {
         setPreloadStrategy(getVideoPreloadStrategy())
@@ -66,6 +86,12 @@ export function HeroMedia() {
         return () => observer.disconnect()
     }, [])
 
+    useEffect(() => {
+        if (!shouldLoadVideo || videoFailed) return
+
+        attemptPlayback()
+    }, [shouldLoadVideo, videoFailed])
+
     return (
         <div ref={wrapperRef} className="relative h-full w-full">
             <Image
@@ -77,24 +103,30 @@ export function HeroMedia() {
                 onError={() => setPosterSrc(HERO_POSTER_FALLBACK_SRC)}
                 className={cn(
                     "object-cover object-[60%_center] transition-opacity duration-500",
-                    isVideoReady && !videoFailed ? "opacity-0" : "opacity-100"
+                    isVideoPlaying && !videoFailed ? "opacity-0" : "opacity-100"
                 )}
             />
 
             {shouldLoadVideo && !videoFailed ? (
                 <video
+                    ref={videoRef}
                     autoPlay
                     loop
                     muted
                     playsInline
                     preload={preloadStrategy}
                     poster={posterSrc}
-                    onCanPlay={() => setIsVideoReady(true)}
-                    onLoadedData={() => setIsVideoReady(true)}
+                    onCanPlay={attemptPlayback}
+                    onLoadedData={attemptPlayback}
+                    onLoadedMetadata={attemptPlayback}
+                    onPlay={() => setIsVideoPlaying(true)}
+                    onPlaying={() => setIsVideoPlaying(true)}
+                    onPause={() => setIsVideoPlaying(false)}
                     onError={() => setVideoFailed(true)}
+                    disablePictureInPicture
                     className={cn(
                         "h-full w-full object-cover object-[60%_center] transition-opacity duration-500",
-                        isVideoReady ? "opacity-100" : "opacity-0"
+                        isVideoPlaying ? "opacity-100" : "opacity-0"
                     )}
                 >
                     <source src={HERO_VIDEO_SRC} type="video/mp4" />
