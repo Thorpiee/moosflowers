@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Facebook, Instagram, Mail } from "lucide-react"
+import { HeroMedia } from "@/components/hero-media"
 
 export function HeroSection() {
   return (
@@ -108,18 +109,7 @@ export function HeroSection() {
                 className="relative w-full max-w-[28rem] aspect-[5/6] overflow-hidden rounded-[1.45rem] border border-border shadow-[0_14px_30px_rgba(28,44,38,0.14)] sm:max-w-[31rem] sm:aspect-[4/5] lg:max-w-[34rem] lg:translate-x-3 xl:max-w-[36rem] animate-fade-in-up"
                 style={{ animationDelay: "0.35s", opacity: 0 }}
               >
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="h-full w-full object-cover object-[60%_center]"
-                >
-                  <source src="/flowervideo.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                {/* Subtle inner vignette on video edges */}
-                <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_40px_rgba(28,44,38,0.07)]" />
+                <HeroMedia />
               </div>
             </div>
 
