@@ -1,12 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
+import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
 
 export function BrandStorySection() {
     return (
-        <section className="bg-secondary px-4 py-16 sm:py-20 md:px-8 md:py-24 xl:px-10 xl:py-28">
-            <div className="mx-auto grid max-w-[88rem] items-center gap-10 md:grid-cols-[0.52fr_0.48fr] md:gap-12 lg:gap-20 xl:gap-24">
+        <section className="section-space bg-secondary layout-shell">
+            <div className="layout-container grid items-center gap-10 md:grid-cols-[0.52fr_0.48fr] md:gap-12 lg:gap-20 xl:gap-24">
                 {/* Image */}
-                <div className="relative aspect-[5/6] overflow-hidden md:aspect-[4/5]">
+                <RevealOnScroll className="relative aspect-[5/6] overflow-hidden md:aspect-[4/5]">
                     <Image
                         src="/whitebespoke.jpg"
                         alt="Moo's Flowers studio"
@@ -15,10 +16,10 @@ export function BrandStorySection() {
                     />
                     {/* Decorative border */}
                     <div className="absolute inset-4 border border-border/80 pointer-events-none" />
-                </div>
+                </RevealOnScroll>
 
                 {/* Text */}
-                <div className="flex flex-col justify-center">
+                <RevealOnScroll className="flex flex-col justify-center" delayMs={80}>
                     <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-4">My Story</p>
                     <h2 className="mb-6 font-serif text-3xl sm:text-4xl md:text-5xl xl:text-6xl leading-tight text-primary">
                         Handcrafted floral designs made with care
@@ -38,11 +39,11 @@ export function BrandStorySection() {
                     </p>
                     <Link
                         href="/about"
-                        className="self-start text-sm tracking-wide text-primary underline underline-offset-4 hover:opacity-70 transition-opacity"
+                        className="btn-premium self-start text-sm tracking-wide text-primary underline underline-offset-4 hover:opacity-70"
                     >
                         Learn More About Me
                     </Link>
-                </div>
+                </RevealOnScroll>
             </div>
         </section>
     )

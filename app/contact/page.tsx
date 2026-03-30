@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
 
 import { ArrowUpRight, Facebook, Instagram, Mail } from "lucide-react"
 
@@ -43,9 +44,9 @@ export default function ContactPage() {
         <main className="min-h-screen">
             <Header />
 
-            <section className="bg-background px-4 py-16 sm:py-20 md:px-8 md:py-24 xl:px-10 xl:py-28">
-                <div className="mx-auto max-w-[88rem]">
-                    <div className="max-w-3xl">
+            <section className="section-space bg-background layout-shell">
+                <div className="layout-container">
+                    <RevealOnScroll className="max-w-3xl">
                         <p className="text-xs uppercase tracking-[0.28em] text-primary/58">Contact</p>
                         <h1 className="mt-4 font-serif text-4xl tracking-wide text-primary sm:text-5xl md:text-6xl">
                             Contact Me
@@ -54,10 +55,10 @@ export default function ContactPage() {
                         <p className="mt-6 max-w-[42rem] text-[0.98rem] leading-relaxed text-primary/78 sm:text-base md:mt-7 md:text-lg">
                             Get in touch for bespoke orders, floral enquiries, collaborations, or just to say hello.
                         </p>
-                    </div>
+                    </RevealOnScroll>
 
                     <div className="mt-10 grid gap-6 md:mt-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 xl:mt-14">
-                        <section className="rounded-[1.6rem] border border-border bg-card px-6 py-7 shadow-[0_12px_34px_rgba(39,57,48,0.08)] md:px-8 md:py-9">
+                        <RevealOnScroll as="section" className="rounded-[1.6rem] border border-border bg-card px-6 py-7 shadow-[0_12px_34px_rgba(39,57,48,0.08)] md:px-8 md:py-9" delayMs={80}>
                             <p className="text-xs uppercase tracking-[0.24em] text-primary/56">Email</p>
                             <div className="mt-6 flex items-start gap-4">
                                 <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-border bg-secondary text-primary">
@@ -86,9 +87,9 @@ export default function ContactPage() {
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </RevealOnScroll>
 
-                        <section className="rounded-[1.6rem] border border-border bg-card px-6 py-7 shadow-[0_12px_34px_rgba(39,57,48,0.06)] md:px-8 md:py-9">
+                        <RevealOnScroll as="section" className="rounded-[1.6rem] border border-border bg-card px-6 py-7 shadow-[0_12px_34px_rgba(39,57,48,0.06)] md:px-8 md:py-9" delayMs={120}>
                             <p className="text-xs uppercase tracking-[0.24em] text-primary/56">Social</p>
                             <h2 className="mt-5 font-serif text-2xl text-primary md:text-3xl">Follow along</h2>
                             <p className="mt-3 max-w-[32rem] text-sm leading-relaxed text-primary/72 md:text-base">
@@ -105,7 +106,7 @@ export default function ContactPage() {
                                             href={item.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="group rounded-[1.25rem] border border-border bg-card px-5 py-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-[0_12px_24px_rgba(39,57,48,0.08)]"
+                                            className="btn-premium group rounded-[1.25rem] border border-border bg-card px-5 py-5 hover:border-primary/20 hover:shadow-[0_12px_24px_rgba(39,57,48,0.08)]"
                                         >
                                             <div className="flex items-center justify-between gap-3">
                                                 <div className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-secondary text-primary">
@@ -119,10 +120,10 @@ export default function ContactPage() {
                                     )
                                 })}
                             </div>
-                        </section>
+                        </RevealOnScroll>
                     </div>
 
-                    <section className="mt-10 rounded-[1.8rem] border border-border bg-card px-5 py-6 sm:px-6 sm:py-7 md:mt-12 md:px-8 md:py-9 xl:px-10">
+                    <RevealOnScroll as="section" className="mt-10 rounded-[1.8rem] border border-border bg-card px-5 py-6 sm:px-6 sm:py-7 md:mt-12 md:px-8 md:py-9 xl:px-10" delayMs={140}>
                         <div className="max-w-2xl">
                             <p className="text-xs uppercase tracking-[0.24em] text-primary/56">Follow Along</p>
                             <h2 className="mt-4 font-serif text-3xl text-primary md:text-4xl">Latest on Instagram & Facebook</h2>
@@ -138,7 +139,7 @@ export default function ContactPage() {
                                     href={item.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group overflow-hidden rounded-[1.4rem] border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(39,57,48,0.08)]"
+                                    className="btn-premium group overflow-hidden rounded-[1.4rem] border border-border bg-card hover:shadow-[0_16px_32px_rgba(39,57,48,0.08)]"
                                 >
                                     <div className="relative aspect-[16/10] overflow-hidden">
                                         <Image
@@ -160,9 +161,9 @@ export default function ContactPage() {
                                 </a>
                             ))}
                         </div>
-                    </section>
+                    </RevealOnScroll>
 
-                    <section className="mt-10 border-t border-primary/12 pt-9 md:mt-12 md:pt-11 lg:mt-14 lg:pt-12">
+                    <RevealOnScroll as="section" className="mt-10 border-t border-primary/12 pt-9 md:mt-12 md:pt-11 lg:mt-14 lg:pt-12" delayMs={160}>
                         <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
                             <div>
                                 <p className="text-xs uppercase tracking-[0.24em] text-primary/56">Let&apos;s Create Something Beautiful</p>
@@ -173,12 +174,12 @@ export default function ContactPage() {
                             </div>
                             <a
                                 href="mailto:hello@moosflowers.com"
-                                className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm tracking-wide text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_12px_22px_rgba(36,52,44,0.18)]"
+                                className="btn-premium btn-shadow-hover inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm tracking-wide text-primary-foreground hover:bg-primary/90"
                             >
                                 Email Me
                             </a>
                         </div>
-                    </section>
+                    </RevealOnScroll>
                 </div>
             </section>
 

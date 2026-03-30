@@ -11,10 +11,15 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <HeroSection />
+      <div className="section-divider" aria-hidden="true" />
       <MyWorkSection />
+      <div className="section-divider" aria-hidden="true" />
       <BrandStorySection />
+      <div className="section-divider" aria-hidden="true" />
       <BespokeSection />
+      <div className="section-divider" aria-hidden="true" />
       <StudioSection />
+      <div className="section-divider" aria-hidden="true" />
       <Footer />
     </main>
   )

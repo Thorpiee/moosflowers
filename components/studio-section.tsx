@@ -1,9 +1,10 @@
 import Image from "next/image"
 import { Instagram, Facebook, Mail } from "lucide-react"
+import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
 
 export function StudioSection() {
   return (
-    <section className="relative overflow-hidden px-4 py-14 sm:py-16 md:px-8 md:py-20 xl:px-10 xl:py-24">
+    <section className="section-space relative overflow-hidden layout-shell">
       <Image
         src="/sunflowersbanner.jpg"
         alt="The studio"
@@ -12,7 +13,7 @@ export function StudioSection() {
       />
       <div className="absolute inset-0 bg-black/18" />
 
-      <div className="relative mx-auto max-w-3xl">
+      <RevealOnScroll className="relative mx-auto max-w-3xl">
         <div className="rounded-[1.2rem] border border-white/15 bg-primary/86 p-7 text-center text-primary-foreground backdrop-blur-[1px] sm:p-8 md:p-10 xl:p-12">
           <h3 className="mb-2 font-serif text-3xl tracking-wide md:text-4xl">Moo's Flowers</h3>
           <p className="mb-7 text-sm tracking-wide text-primary-foreground/80 md:mb-8">Based on the Suffolk–Essex border</p>
@@ -44,7 +45,7 @@ export function StudioSection() {
             </a>
           </div>
         </div>
-      </div>
+      </RevealOnScroll>
     </section>
   )
 }

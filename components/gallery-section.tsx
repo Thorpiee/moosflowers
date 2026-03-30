@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
 interface GallerySlide {
     id: string
@@ -143,10 +144,10 @@ export function GallerySection() {
     }, [isLightboxOpen])
 
     return (
-        <section className="bg-background px-4 pb-16 pt-16 sm:pb-20 sm:pt-20 md:px-8 md:pb-24 md:pt-24 xl:px-10 xl:pb-28 xl:pt-28">
-            <div className="max-w-[88rem] mx-auto">
+        <section className="section-space bg-background layout-shell">
+            <div className="layout-container">
                 {/* Header */}
-                <div className="mb-12 text-center md:mb-16 lg:mb-20 xl:mb-24">
+                <RevealOnScroll className="mb-12 text-center md:mb-16 lg:mb-20">
                     <div className="flex items-center justify-center gap-3 mb-4">
                         <div className="h-px bg-gradient-to-l from-primary/25 to-transparent max-w-20 w-20" />
                         <span className="text-xs tracking-[0.3em] uppercase font-medium text-primary/60">
@@ -160,10 +161,10 @@ export function GallerySection() {
                     <p className="mx-auto max-w-2xl text-[0.98rem] leading-relaxed text-primary/70 sm:text-base md:text-lg">
                         A rotating collection of thoughtfully designed arrangements created for weddings, celebrations, and life's most memorable occasions.
                     </p>
-                </div>
+                </RevealOnScroll>
 
                 {/* Carousel */}
-                <div className="relative">
+                <RevealOnScroll className="relative" delayMs={80}>
                     {/* Main Image */}
                     <div
                         className="relative mx-auto w-full max-w-5xl aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card cursor-zoom-in sm:aspect-[5/6] lg:aspect-[4/5]"
@@ -195,7 +196,7 @@ export function GallerySection() {
                     {/* Navigation Controls */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/35 bg-black/35 text-white shadow-[0_10px_24px_rgba(18,24,21,0.2)] transition-all duration-300 hover:border-white/55 hover:bg-black/45 sm:left-4 sm:h-12 sm:w-12 md:left-6 md:h-14 md:w-14 backdrop-blur-md"
+                        className="btn-premium absolute left-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/35 bg-black/35 text-white shadow-[0_10px_24px_rgba(18,24,21,0.2)] hover:border-white/55 hover:bg-black/45 sm:left-4 sm:h-12 sm:w-12 md:left-6 md:h-14 md:w-14 backdrop-blur-md"
                         aria-label="Previous slide"
                     >
                         <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
@@ -203,7 +204,7 @@ export function GallerySection() {
 
                     <button
                         onClick={nextSlide}
-                        className="absolute right-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/35 bg-black/35 text-white shadow-[0_10px_24px_rgba(18,24,21,0.2)] transition-all duration-300 hover:border-white/55 hover:bg-black/45 sm:right-4 sm:h-12 sm:w-12 md:right-6 md:h-14 md:w-14 backdrop-blur-md"
+                        className="btn-premium absolute right-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/35 bg-black/35 text-white shadow-[0_10px_24px_rgba(18,24,21,0.2)] hover:border-white/55 hover:bg-black/45 sm:right-4 sm:h-12 sm:w-12 md:right-6 md:h-14 md:w-14 backdrop-blur-md"
                         aria-label="Next slide"
                     >
                         <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -223,15 +224,15 @@ export function GallerySection() {
                             />
                         ))}
                     </div>
-                </div>
+                </RevealOnScroll>
 
-                <div className="mx-auto mt-5 max-w-5xl px-1 sm:mt-6">
+                <RevealOnScroll className="mx-auto mt-5 max-w-5xl px-1 sm:mt-6" delayMs={120}>
                     <p className="text-[0.68rem] uppercase tracking-[0.2em] text-primary/56">{slide.category}</p>
                     <h3 className="mt-2 font-serif text-2xl text-primary sm:text-3xl">{slide.title}</h3>
                     <p className="mt-2 max-w-3xl text-[0.98rem] leading-relaxed text-primary/72 sm:text-base md:text-lg">
                         {slide.description}
                     </p>
-                </div>
+                </RevealOnScroll>
 
                 {isLightboxOpen && (
                     <div
@@ -269,7 +270,7 @@ export function GallerySection() {
                 )}
 
                 {/* Image Previews */}
-                <div className="mt-8 md:mt-10 lg:mt-12">
+                <RevealOnScroll className="mt-8 md:mt-10 lg:mt-12" delayMs={140}>
                     <div className="grid grid-cols-4 gap-2 sm:gap-2.5 md:grid-cols-8 md:gap-3">
                         {gallerySlides.map((item, index) => (
                             <button
@@ -298,10 +299,10 @@ export function GallerySection() {
                             </button>
                         ))}
                     </div>
-                </div>
+                </RevealOnScroll>
 
                 {/* Bottom CTA */}
-                <div className="mt-12 border-t border-primary/12 pt-10 md:mt-16 md:pt-14 lg:mt-20 lg:pt-16">
+                <RevealOnScroll className="mt-12 border-t border-primary/12 pt-10 md:mt-16 md:pt-14 lg:mt-20 lg:pt-16" delayMs={160}>
                     <div className="grid grid-cols-1 items-start gap-8 rounded-2xl border border-border bg-card px-5 py-7 md:grid-cols-[1fr_auto] md:items-end md:gap-10 md:px-8 md:py-10 lg:gap-12 lg:px-10 lg:py-12">
                         <div>
                             <h3 className="mb-4 font-serif text-2xl sm:text-3xl md:text-4xl text-primary">
@@ -313,12 +314,12 @@ export function GallerySection() {
                         </div>
                         <Link
                             href="/contact"
-                            className="inline-flex self-start whitespace-nowrap rounded-lg bg-primary px-8 py-3.5 text-sm font-medium tracking-[0.08em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-xl md:self-center md:px-10 md:py-4 md:text-base"
+                            className="btn-premium btn-shadow-hover inline-flex self-start whitespace-nowrap rounded-lg bg-primary px-8 py-3.5 text-sm font-medium tracking-[0.08em] text-primary-foreground hover:bg-primary/90 md:self-center md:px-10 md:py-4 md:text-base"
                         >
                             Contact Me
                         </Link>
                     </div>
-                </div>
+                </RevealOnScroll>
             </div>
         </section>
     )

@@ -139,6 +139,43 @@
   }
 }
 
+@layer utilities {
+  .layout-shell {
+    @apply px-4 md:px-8 xl:px-10;
+  }
+
+  .layout-container {
+    @apply mx-auto max-w-[88rem];
+  }
+
+  .section-space {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  .section-divider {
+    @apply mx-auto w-full max-w-[88rem] border-t border-primary/10;
+  }
+
+  .btn-premium {
+    transition-property: transform, box-shadow, background-color, border-color, color;
+    transition-duration: 240ms;
+    transition-timing-function: ease-out;
+    will-change: transform;
+  }
+
+  .btn-premium:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+
+  .btn-premium:focus-visible {
+    transform: none;
+  }
+
+  .btn-shadow-hover:hover {
+    box-shadow: 0 12px 24px rgba(36, 52, 44, 0.2);
+  }
+}
+
 /* Scroll-triggered fade animations */
 @keyframes fade-in {
   from {
@@ -181,15 +218,31 @@
 }
 
 /* Section reveal on scroll */
-.reveal {
+.reveal-on-scroll {
+  --reveal-delay: 0ms;
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translate3d(0, 16px, 0);
+  transition: opacity 520ms ease, transform 520ms ease;
+  transition-delay: var(--reveal-delay);
+  will-change: transform, opacity;
 }
 
-.reveal.visible {
+.reveal-on-scroll.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn-premium,
+  .btn-premium:hover {
+    transform: none;
+  }
 }
 
 /* Hover scale for gallery */

@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
 
 type WorkItem = {
     title: string
@@ -38,9 +39,9 @@ const workItems: WorkItem[] = [
 
 export function MyWorkSection() {
     return (
-        <section className="bg-background px-4 py-16 sm:py-20 md:px-8 md:py-24 xl:px-10 xl:py-28" aria-labelledby="my-work-heading">
-            <div className="max-w-[88rem] mx-auto">
-                <div className="mb-9 md:mb-10">
+        <section className="section-space bg-background layout-shell" aria-labelledby="my-work-heading">
+            <div className="layout-container">
+                <RevealOnScroll className="mb-9 md:mb-10">
                     <div className="max-w-3xl">
                         <h2 id="my-work-heading" className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary tracking-wide">
                             My Work
@@ -50,16 +51,18 @@ export function MyWorkSection() {
                             Explore a portfolio of thoughtfully designed floral arrangements, crafted for every occasion
                         </p>
                     </div>
-                </div>
+                </RevealOnScroll>
 
                 <div
                     className="flex md:grid md:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6 xl:gap-7 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-2"
                     role="list"
                     aria-label="Floral portfolio showcase"
                 >
-                    {workItems.map((item) => (
-                        <article
+                    {workItems.map((item, index) => (
+                        <RevealOnScroll
                             key={item.title}
+                            as="article"
+                            delayMs={index * 70}
                             role="listitem"
                             className="group min-w-[84%] sm:min-w-[56%] md:min-w-0 bg-card border border-border shadow-[0_8px_30px_rgba(48,66,57,0.08)] p-4 sm:p-5 md:p-6 flex flex-col snap-start transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(48,66,57,0.14)]"
                         >
@@ -78,7 +81,7 @@ export function MyWorkSection() {
                                     <h3 className="mt-2 font-serif text-[1.22rem] sm:text-[1.3rem] xl:text-2xl text-primary leading-snug">{item.title}</h3>
                                 </div>
                             </div>
-                        </article>
+                        </RevealOnScroll>
                     ))}
                 </div>
             </div>
