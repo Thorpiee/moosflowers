@@ -27,13 +27,13 @@ const socialPreviews = [
     {
         label: "Latest On Instagram",
         title: "A glimpse of recent bouquets and seasonal work",
-        image: "/images/flowers5.jpg",
+        image: "/images/flowers5.webp",
         href: "https://www.instagram.com/moosflowers/",
     },
     {
         label: "Latest On Facebook",
         title: "Studio updates, wreaths, and bespoke floral moments",
-        image: "/images/flowers7.jpg",
+        image: "/images/flowers7.webp",
         href: "https://www.facebook.com/moosflowers/",
     },
 ]

@@ -9,7 +9,7 @@ export function BrandStorySection() {
                 {/* Image */}
                 <RevealOnScroll className="relative aspect-[5/6] overflow-hidden md:aspect-[4/5]">
                     <Image
-                        src="/whitebespoke.jpg"
+                        src="/whitebespoke.webp"
                         alt="Moo's Flowers studio"
                         fill
                         className="object-cover"
@@ -20,9 +20,8 @@ export function BrandStorySection() {
 
                 {/* Text */}
                 <RevealOnScroll className="flex flex-col justify-center" delayMs={80}>
-                    <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-4">My Story</p>
                     <h2 className="mb-6 font-serif text-3xl sm:text-4xl md:text-5xl xl:text-6xl leading-tight text-primary">
-                        Natural Floristry on the Suffolk-Essex Border
+                        My Story
                     </h2>
                     <div className="w-10 h-px bg-primary/40 mb-6" />
                     <p className="mb-4 text-[0.98rem] leading-relaxed text-muted-foreground sm:text-base xl:text-lg">

@@ -5,7 +5,8 @@ import { useEffect, useRef, useState } from "react"
 
 import { cn } from "@/lib/utils"
 
-const HERO_POSTER_SRC = "/images/hero-flowers.jpg"
+const HERO_POSTER_SRC = "/hero-poster-flowers.webp"
+const HERO_POSTER_FALLBACK_SRC = "/images/hero-flowers.webp"
 const HERO_VIDEO_SRC = "/flowervideo.mp4"
 
 type NetworkInformation = {
@@ -31,6 +32,7 @@ export function HeroMedia() {
     const [isVideoReady, setIsVideoReady] = useState(false)
     const [videoFailed, setVideoFailed] = useState(false)
     const [preloadStrategy, setPreloadStrategy] = useState<"none" | "metadata">("metadata")
+    const [posterSrc, setPosterSrc] = useState(HERO_POSTER_SRC)
 
     useEffect(() => {
         setPreloadStrategy(getVideoPreloadStrategy())
@@ -67,11 +69,12 @@ export function HeroMedia() {
     return (
         <div ref={wrapperRef} className="relative h-full w-full">
             <Image
-                src={HERO_POSTER_SRC}
+                src={posterSrc}
                 alt="Seasonal floral arrangement by Moo's Flowers in Suffolk and Essex"
                 fill
                 priority
                 sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 36rem"
+                onError={() => setPosterSrc(HERO_POSTER_FALLBACK_SRC)}
                 className={cn(
                     "object-cover object-[60%_center] transition-opacity duration-500",
                     isVideoReady && !videoFailed ? "opacity-0" : "opacity-100"
@@ -85,7 +88,7 @@ export function HeroMedia() {
                     muted
                     playsInline
                     preload={preloadStrategy}
-                    poster={HERO_POSTER_SRC}
+                    poster={posterSrc}
                     onCanPlay={() => setIsVideoReady(true)}
                     onLoadedData={() => setIsVideoReady(true)}
                     onError={() => setVideoFailed(true)}

@@ -4,7 +4,7 @@ export function BannerSection() {
   return (
     <section className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden">
       <Image
-        src="/images/banner-flowers.jpg"
+        src="/images/banner-flowers.webp"
         alt="Beautiful flowers in nature"
         fill
         className="object-cover"

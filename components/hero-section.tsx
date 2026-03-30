@@ -24,21 +24,19 @@ export function HeroSection() {
                 {/* Brand label */}
                 <div className="mb-5 flex items-center gap-3 animate-fade-in">
                   <span className="text-[0.67rem] tracking-[0.32em] uppercase text-primary/55">
-                    Moo's Flowers
+                    Your local florist
                   </span>
                 </div>
 
                 <h1 className="mb-5 max-w-[12ch] font-serif text-4xl leading-[0.95] tracking-[0.01em] text-primary sm:text-5xl md:text-6xl lg:text-[4.35rem] xl:text-[5.1rem] animate-fade-in-up">
-                  Seasonal Florist
-                  <br />
-                  in Suffolk & Essex
+                  Moo's Flowers
                 </h1>
 
                 <div className="mb-6 h-px w-14 bg-primary/35" />
 
                 {/* Supporting copy */}
                 <p className="mb-8 max-w-[44ch] text-[0.98rem] leading-relaxed text-primary/78 sm:text-base md:text-lg xl:text-[1.18rem] animate-fade-in-up animation-delay-100">
-                  Moo's Flowers creates natural, countryside-inspired wedding flowers, gifts, and home arrangements across Suffolk, Essex, Ipswich, Colchester, and the surrounding countryside, each one made with a slightly wild, thoughtful hand.
+                  Florist on the Suffolk–Essex border. Seasonal, natural arrangements that feel relaxed, joyful & a little wild. Inspired by the countryside, crafted with care, perfect for homes, tables, and special moments.
                 </p>
 
                 {/* CTA group */}
@@ -116,12 +114,6 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="mx-auto mt-6 max-w-4xl rounded-[1.35rem] border border-border/75 bg-card/70 px-5 py-5 text-center shadow-[0_10px_24px_rgba(36,52,44,0.06)] backdrop-blur-sm sm:px-7 sm:py-6">
-          <h2 className="font-serif text-2xl text-primary sm:text-[2rem]">Floristry across Suffolk and Essex</h2>
-          <p className="mx-auto mt-3 max-w-3xl text-[0.95rem] leading-relaxed text-primary/72 sm:text-base">
-            Based on the Suffolk-Essex border, Moo's Flowers provides bespoke floral arrangements across Ipswich, Colchester, and the surrounding countryside, creating seasonal flowers for weddings, events, thoughtful gifts, and beautiful homes.
-          </p>
-        </div>
       </div>
     </section>
   )

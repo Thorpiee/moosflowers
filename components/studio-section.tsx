@@ -6,7 +6,7 @@ export function StudioSection() {
   return (
     <section className="section-space relative overflow-hidden layout-shell">
       <Image
-        src="/sunflowersbanner.jpg"
+        src="/sunflowersbanner.webp"
         alt="The studio"
         fill
         className="object-cover"

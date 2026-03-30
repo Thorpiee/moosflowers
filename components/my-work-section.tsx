@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
 
 type WorkItem = {
@@ -14,25 +15,25 @@ const workItems: WorkItem[] = [
     {
         title: "Christmas Wreath",
         label: "Seasonal",
-        image: "/flowers1.jpg",
+        image: "/flowers1.webp",
         alt: "Seasonal Christmas wreath by Moo's Flowers on the Suffolk-Essex border",
     },
     {
         title: "Living Wreath",
         label: "Seasonal",
-        image: "/flowers2.jpg",
+        image: "/flowers2.webp",
         alt: "Living wreath crafted by Moo's Flowers, natural florist in Essex",
     },
     {
         title: "Structured Hand-tied",
         label: "everyday",
-        image: "/flowers3.jpg",
+        image: "/flowers3.webp",
         alt: "Structured hand-tied bouquet by Moo's Flowers near Ipswich",
     },
     {
         title: "Natural Living Wreath",
         label: "Seasonal",
-        image: "/flowers4.jpg",
+        image: "/flowers4.webp",
         alt: "Natural living wreath created by Moo's Flowers for a Colchester home",
     },
 ]
@@ -42,14 +43,22 @@ export function MyWorkSection() {
         <section className="section-space bg-background layout-shell" aria-labelledby="my-work-heading">
             <div className="layout-container">
                 <RevealOnScroll className="mb-9 md:mb-10">
-                    <div className="max-w-3xl">
-                        <h2 id="my-work-heading" className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary tracking-wide">
-                            Seasonal Flowers for Weddings, Gifts & Home
-                        </h2>
-                        <div className="mt-4 h-px w-28 bg-primary/30" />
-                        <p className="mt-5 text-[0.98rem] sm:text-base md:text-lg xl:text-xl text-primary/80 leading-relaxed">
-                            Explore floral arrangements for weddings, events, gifts, and home styling across Suffolk, Essex, Ipswich, and Colchester.
-                        </p>
+                    <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+                        <div className="max-w-2xl">
+                            <h2 id="my-work-heading" className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary tracking-wide">
+                                My Work
+                            </h2>
+                            <div className="mt-4 h-px w-28 bg-primary/30" />
+                            <p className="mt-5 text-[0.98rem] sm:text-base md:text-lg xl:text-xl text-primary/80 leading-relaxed">
+                                Explore a portfolio of thoughtfully designed floral arrangements, crafted for every occasion.
+                            </p>
+                        </div>
+                        <Link
+                            href="/bespoke-gallery"
+                            className="btn-premium shrink-0 rounded-full border border-primary/45 px-7 py-3 text-sm tracking-wide text-primary hover:bg-primary/8 self-start sm:self-auto"
+                        >
+                            View Bespoke Gallery
+                        </Link>
                     </div>
                 </RevealOnScroll>
 

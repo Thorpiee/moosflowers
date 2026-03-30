@@ -2,12 +2,12 @@ import Image from "next/image"
 import Link from "next/link"
 
 const galleryImages = [
-    { src: "/images/category-bouquets.jpg", alt: "Bespoke bouquet" },
-    { src: "/images/wedding-1.jpg", alt: "Wedding florals" },
-    { src: "/images/shop-look-main.jpg", alt: "Styled arrangement" },
-    { src: "/images/category-weddings.jpg", alt: "Wedding centrepiece" },
-    { src: "/images/shop-look-1.jpg", alt: "Table arrangement" },
-    { src: "/images/newsletter-bg.jpg", alt: "Seasonal blooms" },
+    { src: "/images/category-bouquets.webp", alt: "Bespoke bouquet" },
+    { src: "/images/wedding-1.webp", alt: "Wedding florals" },
+    { src: "/images/shop-look-main.webp", alt: "Styled arrangement" },
+    { src: "/images/category-weddings.webp", alt: "Wedding centrepiece" },
+    { src: "/images/shop-look-1.webp", alt: "Table arrangement" },
+    { src: "/images/newsletter-bg.webp", alt: "Seasonal blooms" },
 ]
 
 export function GalleryPreviewSection() {

@@ -7,28 +7,28 @@ const testimonials = [
     date: "Verified Buyer",
     rating: 5,
     text: "Absolutely stunning bouquet! The flowers were incredibly fresh and the arrangement was even more beautiful than the photos.",
-    image: "/images/testimonial-1.jpg"
+    image: "/images/testimonial-1.webp"
   },
   {
     name: "Emma Thompson",
     date: "Verified Buyer",
     rating: 5,
     text: "The wedding flowers exceeded all expectations. Moo's team was so professional and creative throughout the entire process.",
-    image: "/images/testimonial-2.jpg"
+    image: "/images/testimonial-2.webp"
   },
   {
     name: "Lucy Williams",
     date: "Verified Buyer",
     rating: 5,
     text: "Beautiful seasonal arrangement delivered right on time. The recipient was absolutely delighted!",
-    image: "/images/testimonial-3.jpg"
+    image: "/images/testimonial-3.webp"
   },
   {
     name: "Charlotte Brown",
     date: "Verified Buyer",
     rating: 5,
     text: "We attended the floral workshop and had such a lovely time. Can't wait to book another one!",
-    image: "/images/testimonial-4.jpg"
+    image: "/images/testimonial-4.webp"
   }
 ]
 

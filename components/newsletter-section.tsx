@@ -18,7 +18,7 @@ export function NewsletterSection() {
   return (
     <section className="relative py-20 md:py-32 px-4 md:px-8 overflow-hidden">
       <Image
-        src="/images/newsletter-bg.jpg"
+        src="/images/newsletter-bg.webp"
         alt="Flowers background"
         fill
         className="object-cover"

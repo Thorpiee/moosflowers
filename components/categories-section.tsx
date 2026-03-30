@@ -4,17 +4,17 @@ import Link from "next/link"
 const categories = [
   {
     title: "Bouquets",
-    image: "/images/category-bouquets.jpg",
+    image: "/images/category-bouquets.webp",
     href: "#"
   },
   {
     title: "Weddings",
-    image: "/images/category-weddings.jpg",
+    image: "/images/category-weddings.webp",
     href: "#"
   },
   {
     title: "Plants",
-    image: "/images/category-plants.jpg",
+    image: "/images/category-plants.webp",
     href: "#"
   }
 ]

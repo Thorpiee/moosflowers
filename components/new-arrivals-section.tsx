@@ -5,25 +5,25 @@ const products = [
   {
     name: "Spring Meadow Bouquet",
     price: "£45.00",
-    image: "/images/product-1.jpg",
+    image: "/images/product-1.webp",
     href: "#"
   },
   {
     name: "Romantic Roses",
     price: "£55.00",
-    image: "/images/product-2.jpg",
+    image: "/images/product-2.webp",
     href: "#"
   },
   {
     name: "Wildflower Posy",
     price: "£35.00",
-    image: "/images/product-3.jpg",
+    image: "/images/product-3.webp",
     href: "#"
   },
   {
     name: "Elegant Lilies",
     price: "£50.00",
-    image: "/images/product-4.jpg",
+    image: "/images/product-4.webp",
     href: "#"
   }
 ]

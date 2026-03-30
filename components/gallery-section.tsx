@@ -23,7 +23,7 @@ const gallerySlides: GallerySlide[] = [
         category: 'Seasonal',
         description: 'A vibrant blend of seasonal blooms and textured foliage.',
         alt: "Seasonal bouquet with textured foliage by Moo's Flowers, florist in Suffolk",
-        image: '/images/flowers1.jpg',
+        image: '/images/flowers1.webp',
         objectPosition: '50% 52%',
     },
     {
@@ -32,7 +32,7 @@ const gallerySlides: GallerySlide[] = [
         category: 'Weddings',
         description: 'Timeless beauty for your most cherished moment.',
         alt: "Natural bridal bouquet by Moo's Flowers, wedding florist in Essex",
-        image: '/images/flowers2.jpg',
+        image: '/images/flowers2.webp',
         objectPosition: '50% 48%',
     },
     {
@@ -41,7 +41,7 @@ const gallerySlides: GallerySlide[] = [
         category: 'Bouquets',
         description: 'Loose and romantic arrangement in soft pastels.',
         alt: "Romantic pastel bouquet arranged by Moo's Flowers near Ipswich",
-        image: '/images/flowers3.jpg',
+        image: '/images/flowers3.webp',
         objectPosition: '52% 52%',
     },
     {
@@ -50,7 +50,7 @@ const gallerySlides: GallerySlide[] = [
         category: 'Weddings',
         description: 'Romantic garden-style design for special occasions.',
         alt: "Garden-style wedding flowers for an Essex celebration by Moo's Flowers",
-        image: '/images/flowers5.jpg',
+        image: '/images/flowers5.webp',
         objectPosition: '50% 46%',
     },
     {
@@ -59,7 +59,7 @@ const gallerySlides: GallerySlide[] = [
         category: 'Bouquets',
         description: 'Dreamy and delicate arrangement of choice blooms.',
         alt: "Delicate hand-tied bouquet by Moo's Flowers on the Suffolk-Essex border",
-        image: '/images/flowers6.jpg',
+        image: '/images/flowers6.webp',
         objectPosition: '50% 40%',
     },
     {
@@ -68,7 +68,7 @@ const gallerySlides: GallerySlide[] = [
         category: 'Seasonal',
         description: 'Fresh and bright arrangement capturing spring energy.',
         alt: "Spring floral arrangement created by Moo's Flowers for an Ipswich home",
-        image: '/images/flowers7.jpg',
+        image: '/images/flowers7.webp',
         objectPosition: '50% 50%',
     },
     {
@@ -77,7 +77,7 @@ const gallerySlides: GallerySlide[] = [
         category: 'Events',
         description: 'Sophisticated design for elevated occasions.',
         alt: "Elegant event flowers by Moo's Flowers for a Colchester celebration",
-        image: '/images/flowers8.jpg',
+        image: '/images/flowers8.webp',
         objectPosition: '52% 48%',
     },
     {
@@ -86,7 +86,7 @@ const gallerySlides: GallerySlide[] = [
         category: 'Events',
         description: 'Premium selection of the finest seasonal blooms.',
         alt: "Premium seasonal floral arrangement by Moo's Flowers in Suffolk",
-        image: '/images/flowers9.jpg',
+        image: '/images/flowers9.webp',
         objectPosition: '50% 42%',
     },
 ]
@@ -157,15 +157,9 @@ export function GallerySection() {
             <div className="layout-container">
                 {/* Header */}
                 <RevealOnScroll className="mb-8 text-center md:mb-10 lg:mb-12">
-                    <div className="flex items-center justify-center gap-3 mb-4">
-                        <div className="h-px bg-gradient-to-l from-primary/25 to-transparent max-w-20 w-20" />
-                        <span className="text-xs tracking-[0.3em] uppercase font-medium text-primary/60">
-                            Portfolio
-                        </span>
-                        <div className="h-px bg-gradient-to-r from-primary/25 to-transparent max-w-20 w-20" />
-                    </div>
                     <h1 className="mb-4 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[3.9rem] tracking-wide text-primary">
-                        Bespoke Wedding Flowers & Floral Gallery
+                        <span className="block text-sm font-sans tracking-[0.3em] uppercase text-primary/55 mb-3">my</span>
+                        Bespoke Gallery
                     </h1>
                     <p className="mx-auto max-w-2xl text-[0.96rem] leading-relaxed text-primary/70 sm:text-base md:text-[1.02rem]">
                         Explore bespoke wedding flowers, bouquets, and event floristry by Moo's Flowers, a natural florist serving Suffolk, Essex, Ipswich, Colchester, and the surrounding countryside.

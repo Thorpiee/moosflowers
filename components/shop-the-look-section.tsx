@@ -11,7 +11,7 @@ export function ShopTheLookSection() {
           {/* Main image */}
           <div className="relative aspect-[4/5] overflow-hidden">
             <Image
-              src="/images/shop-look-main.jpg"
+              src="/images/shop-look-main.webp"
               alt="Styled floral arrangement in home setting"
               fill
               className="object-cover"
@@ -36,7 +36,7 @@ export function ShopTheLookSection() {
             <Link href="#" className="group">
               <div className="relative aspect-square overflow-hidden mb-3">
                 <Image
-                  src="/images/shop-look-1.jpg"
+                  src="/images/shop-look-1.webp"
                   alt="Ceramic vase with flowers"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -46,7 +46,7 @@ export function ShopTheLookSection() {
             <Link href="#" className="group">
               <div className="relative aspect-square overflow-hidden mb-3">
                 <Image
-                  src="/images/shop-look-2.jpg"
+                  src="/images/shop-look-2.webp"
                   alt="Dried flower arrangement"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
