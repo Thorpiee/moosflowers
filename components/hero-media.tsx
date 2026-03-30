@@ -31,6 +31,7 @@ export function HeroMedia() {
     const videoRef = useRef<HTMLVideoElement | null>(null)
     const [shouldLoadVideo, setShouldLoadVideo] = useState(false)
     const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+    const [autoplayBlocked, setAutoplayBlocked] = useState(false)
     const [videoFailed, setVideoFailed] = useState(false)
     const [preloadStrategy, setPreloadStrategy] = useState<"none" | "metadata">("metadata")
     const [posterSrc, setPosterSrc] = useState(HERO_POSTER_SRC)
@@ -38,6 +39,9 @@ export function HeroMedia() {
     function attemptPlayback() {
         const video = videoRef.current
         if (!video || videoFailed) return
+
+        video.muted = true
+        video.defaultMuted = true
 
         const playback = video.play()
 
@@ -50,7 +54,7 @@ export function HeroMedia() {
                 return
             }
 
-            setVideoFailed(true)
+            setAutoplayBlocked(true)
         })
     }
 
@@ -92,6 +96,17 @@ export function HeroMedia() {
         attemptPlayback()
     }, [shouldLoadVideo, videoFailed])
 
+    useEffect(() => {
+        if (!autoplayBlocked) return
+
+        const timer = window.setTimeout(() => {
+            setAutoplayBlocked(false)
+            attemptPlayback()
+        }, 350)
+
+        return () => window.clearTimeout(timer)
+    }, [autoplayBlocked])
+
     return (
         <div ref={wrapperRef} className="relative h-full w-full">
             <Image
@@ -119,8 +134,14 @@ export function HeroMedia() {
                     onCanPlay={attemptPlayback}
                     onLoadedData={attemptPlayback}
                     onLoadedMetadata={attemptPlayback}
-                    onPlay={() => setIsVideoPlaying(true)}
-                    onPlaying={() => setIsVideoPlaying(true)}
+                    onPlay={() => {
+                        setAutoplayBlocked(false)
+                        setIsVideoPlaying(true)
+                    }}
+                    onPlaying={() => {
+                        setAutoplayBlocked(false)
+                        setIsVideoPlaying(true)
+                    }}
                     onPause={() => setIsVideoPlaying(false)}
                     onError={() => setVideoFailed(true)}
                     disablePictureInPicture
