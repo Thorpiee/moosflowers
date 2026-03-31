@@ -6,10 +6,12 @@ import { BespokeSection } from "@/components/bespoke-section"
 import { StudioSection } from "@/components/studio-section"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
+import { baseSeoKeywords, homeSeoKeywords } from "@/lib/seo-keywords"
 
 export const metadata: Metadata = {
   title: "Moo's Flowers | Florist in Suffolk & Essex",
   description: "Natural, seasonal florist on the Suffolk-Essex border creating wedding flowers, gifts, and bespoke arrangements for Ipswich, Colchester, and beyond.",
+  keywords: [...baseSeoKeywords, ...homeSeoKeywords],
   alternates: {
     canonical: '/',
   },

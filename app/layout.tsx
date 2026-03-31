@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import './globals.css'
+import { baseSeoKeywords } from '@/lib/seo-keywords'
 
 const GA_MEASUREMENT_ID = 'G-QWGSDVEJ81'
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://moosflowers.com'),
   title: "Moo's Flowers | Florist in Suffolk & Essex",
   description: 'Natural, seasonal florist on the Suffolk-Essex border creating wedding flowers, bespoke bouquets, and floral arrangements across Suffolk and Essex.',
+  keywords: baseSeoKeywords,
   generator: 'v0.app',
   icons: {
     icon: [

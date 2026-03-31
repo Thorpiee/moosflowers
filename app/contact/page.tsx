@@ -5,6 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
 import type { Metadata } from "next"
+import { baseSeoKeywords, contactSeoKeywords } from "@/lib/seo-keywords"
 
 import { ArrowUpRight, Facebook, Instagram, Mail } from "lucide-react"
 
@@ -41,6 +42,7 @@ const socialPreviews = [
 export const metadata: Metadata = {
     title: "Contact Moo's Flowers | Florist Suffolk & Essex",
     description: "Enquire with Moo's Flowers for wedding flowers, bouquet delivery, and bespoke floral design across Suffolk, Essex, Ipswich, Colchester, and nearby areas.",
+    keywords: [...baseSeoKeywords, ...contactSeoKeywords],
     alternates: {
         canonical: '/contact',
     },

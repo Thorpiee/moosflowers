@@ -3,10 +3,12 @@ import { Footer } from "@/components/footer"
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll"
 import Image from "next/image"
 import type { Metadata } from "next"
+import { aboutSeoKeywords, baseSeoKeywords } from "@/lib/seo-keywords"
 
 export const metadata: Metadata = {
     title: "About Moo's Flowers | Florist in Suffolk & Essex",
     description: "Meet Jaz of Moo's Flowers, a natural florist on the Suffolk-Essex border creating seasonal wedding flowers and bespoke arrangements for Ipswich and Colchester.",
+    keywords: [...baseSeoKeywords, ...aboutSeoKeywords],
     alternates: {
         canonical: '/about',
     },
